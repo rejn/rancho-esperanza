@@ -1,0 +1,41 @@
+---
+layout: default.hbs
+lang: "en"
+---
+<header class="banner" id="banner" role="banner">
+  <a class="banner__logo" href="./"><img src="assets/images/logo.png" alt="Rancho Esperanza"></a>
+  <br>
+  <a class="banner__menu" href="#navigation">Jump to Menu</a>
+  <br>
+  <p class="banner__lang-selector icon icon--bubbles"><a class="" href="index-es.html">Información en Español</a></p>
+</header>
+
+{{> body }}
+
+<nav class="navigation" id="navigation" role="navigation">
+  <ul class="navigation__inner">
+    <li {{#is title "Tejt"}} class="active"{{/is}} class="navigation__item navigation-item-home" id="nav-home">
+      <a href="./">Home</a>
+    </li>
+    <li class="navigation__item" id="nav-about-us">
+      <a href="mission-and-projects.html">About&nbsp;Jiquilillo</a>
+    </li>
+    <li class="navigation__item" id="nav-about-us"><a href="mission-and-projects.html">Community&nbsp;Projects</a></li>
+    <li class="navigation__item" id="nav-volunteer"><a href="volunteer-opportunities.html">Volunteer&nbsp;Opportunities</a></li>
+    <li class="navigation__item" id="nav-excursions"><a href="excursions-and-activities.html">Activities&nbsp;&amp;&nbsp;Excursions</a></li>
+    <li class="navigation__item" id="nav-prices"><a href="accommodation-and-prices.html">Accommodation&nbsp;&amp;&nbsp;Prices</a></li>
+    <li class="navigation__item" id="nav-finding-us"><a href="finding-us.html">Finding&nbsp;us</a></li>
+  </ul>
+</nav>
+
+<div class="complementary" role="complementary">
+  <ul>
+    <li><a class="icon icon--phone" href="tel:+50588791795">+505 8 879 1795</a></li>
+    <li><a class="icon icon--envelop" href="mailto:hola@rancho-esperanza.com">hola@rancho-esperanza.com</a></li>
+  </ul>
+</div>
+<footer class="contentinfo" role="contentinfo">
+  <p>The racho is <a href="for-sale.html">for sale</a>!</strong></p>
+  <a class="icon icon--facebook" href="#">Latest news</a> ~ <a class="icon icon--quill" href="#">Guest reviews</a>
+  <p>This website, like everything at Rancho Esperanza, was a team effort. We'd like to thank <a href="made-by.html">everyone</a> who helped. <strong></p>
+</footer>

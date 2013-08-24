@@ -1,0 +1,119 @@
+/* =icon */
+.icon {
+  font-family: 'icomoon';
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  speak: none;
+  text-transform: none;
+}
+
+.icon--envelop:before {
+  content: "\e000";
+}
+
+.icon--quill:before {
+  content: "\e001";
+}
+
+.icon--facebook:before {
+  content: "\e002";
+}
+
+.icon--arrow-right:before {
+  content: "\e003";
+}
+
+.icon--bubbles:before {
+  content: "\e004";
+}
+
+.icon--menu:before {
+  content: "\e005";
+}
+
+.icon--phone:before {
+  content: "\e006";
+}
+
+
+
+/* =pull-right */
+.pull-left {
+  @media mq-medium {
+    float: left;
+    margin-right: 2em;
+  }
+}
+
+
+
+/* =pull-right */
+.pull-right {
+  @media mq-medium {
+    float: right;
+    margin-left: 2em;
+  }
+}
+
+
+
+/* =call-to-action */
+.call-to-action {
+  background: grey-lightest;
+  border: 1px solid grey;
+  clear: both;
+  padding: 0.5em;
+  text-align: center;
+}
+
+.call-to-action__item {
+  &::after {
+    content: ' ->';
+  }
+}
+
+
+
+/* =content */
+.content {
+  clear: fix;
+}
+
+.content__primary {
+  @media mq-medium {
+    float: left;
+    width: 45%;
+  }
+}
+
+.content__secondary {
+  @media mq-medium {
+    float: right;
+    width: 45%;
+  }
+}
+
+
+/*==content--70-30 */
+.content--70-30 {
+  @media mq-medium {
+    .content__primary {
+      width: 55%;
+    }
+
+    .content__secondary {
+      width: 35%;
+    }
+  }
+}
+
+
+/* =note */
+.note {
+  color: grey;
+  border: 1px solid grey-lightest;
+  padding: 0.5em;
+  text-align: center;
+}

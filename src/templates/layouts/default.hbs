@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]><html lang="{{ lang }}" class="no-js old-ie"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="{{ lang }}" class="no-js"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link href="http://fonts.googleapis.com/css?family=Bitter:400,700,400italic|Paprika" rel="stylesheet">
+    <link href="{{ assets }}/styles/core.css" rel="stylesheet">
+    <script src="assets/libs/modernizr/modernizr.js"></script>
+  </head>
+  <body>
+    {{> body }}
+    {{#dev}}{{/dev}}
+    <script src="{{ assets }}/scripts/core.js"></script>
+  </body>
+</html>

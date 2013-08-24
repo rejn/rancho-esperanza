@@ -1,0 +1,146 @@
+html {
+  font-size: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: font-family-bitter;
+  font-size: 1em;
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 46em;
+  padding: 2em 5%;
+  position: relative;
+  .old-ie & {
+    width: 500px;
+  }
+}
+
+
+
+/* =links */
+a {
+  color: blue;
+  border-bottom: 0.063em dotted blue;
+  text-decoration: none;
+  &:focus {
+    outline: thin dotted;
+  }
+  &:active,
+  &:hover {
+    border-bottom-style: solid;
+    text-decoration: none;
+  }
+}
+
+
+
+/* =heading content */
+h1,
+h2,
+h3 {
+  clear: both;
+  font-family: Paprika, cursive;
+  font-size: 2.375em;
+  font-weight: normal;
+  line-height: 1.4;
+  margin: 0 0.5em 1.5em 0.5em;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.750em;
+  padding-top: 1em;
+}
+
+h3 {
+  font-size: 1.5em;
+  padding-top: 1em;
+}
+
+
+
+/* =text-level semantics */
+address {
+  font-style: normal;
+}
+
+small {
+  font-size: 1em;
+}
+
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+
+
+/* =grouping content */
+p {
+  margin: 0 0 2em 0;
+}
+
+
+/* ==lists */
+dl,
+ul,
+ol {
+  margin: 0 0 2em 0;
+}
+
+
+/* ==table */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 2em;
+  width: 100%;
+}
+
+caption {
+  font-weight: bold;
+  text-align: left;
+}
+
+th,
+td {
+  font-size: 14px;
+  padding-right: 0.5em;
+  text-align: left;
+  vertical-align: top;
+}
+
+
+
+/* =embedding content */
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+  .old-ie & {
+    interpolation-mode: bicubic;
+  }
+}
+
+figure {
+  clear: both;
+  display: table;
+  margin: 1em auto 2em auto;
+  img {
+    display: block;
+    max-width:100%;
+  }
+}
+
+figcaption {
+  caption-side: bottom;
+  color: grey;
+  display: table-caption;
+  font-size: 0.813em;
+  font-style: italic;
+  padding: 1em 3% 0 3%;
+  text-align: center;
+}
+

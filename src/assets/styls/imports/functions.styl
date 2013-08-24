@@ -1,0 +1,19 @@
+// = clear (overrides clear to give clear fix)
+clear(arg)
+  if arg is "fix"
+    &::before
+    &::after
+      content: " "
+      display: table
+    &::after
+      clear: both
+    .old-ie &
+      *zoom: 1 if support-for-ie
+  else
+    clear: arg
+
+
+
+// = font-smoothing
+interpolation-mode()
+  vendor('interpolation-mode', arguments, only: ms)
