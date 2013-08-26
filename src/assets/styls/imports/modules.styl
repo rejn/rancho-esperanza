@@ -1,10 +1,11 @@
 /* =icon */
-.icon {
+.icon:before {
   font-family: 'icomoon';
   font-style: normal;
   font-variant: normal;
   font-weight: normal;
   line-height: 1;
+  padding-right: 0.5em;
   speak: none;
   text-transform: none;
 }
@@ -37,6 +38,10 @@
   content: "\e006";
 }
 
+.icon--dollar:before {
+  content: "\e007";
+}
+
 
 
 /* =pull-right */
@@ -64,14 +69,21 @@
   background: grey-lightest;
   border: 1px solid grey;
   clear: both;
-  padding: 0.5em;
+  padding: 1em;
   text-align: center;
+  & > *:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .call-to-action__item {
   &::after {
     content: ' ->';
   }
+}
+
+.call-to-action__item--primary {
+  font-weight: bold;
 }
 
 
@@ -114,6 +126,23 @@
 .note {
   color: grey;
   border: 1px solid grey-lightest;
+  margin-bottom: 2em;
   padding: 0.5em;
   text-align: center;
+}
+
+.embed {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 80%;
+  padding-top: 30px;
+  position: relative;
+}
+
+.embed__inner {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }

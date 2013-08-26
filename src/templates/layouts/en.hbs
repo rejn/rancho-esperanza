@@ -3,39 +3,51 @@ layout: default.hbs
 lang: "en"
 ---
 <header class="banner" id="banner" role="banner">
-  <a class="banner__logo" href="./"><img src="assets/images/logo.png" alt="Rancho Esperanza"></a>
-  <br>
-  <a class="banner__menu" href="#navigation">Jump to Menu</a>
-  <br>
-  <p class="banner__lang-selector icon icon--bubbles"><a class="" href="index-es.html">Información en Español</a></p>
+  <a class="banner__logo" href="./"><img alt="Rancho Esperanza" height="185" src="assets/images/logo.png" width="180"></a>
+  <a class="banner__lang-selector icon icon--bubbles" href="index-es.html">En Español</a>
+  <a class="banner__menu icon icon--menu" href="#navigation">Menu</a>
 </header>
 
 {{> body }}
 
 <nav class="navigation" id="navigation" role="navigation">
   <ul class="navigation__inner">
-    <li {{#is title "Tejt"}} class="active"{{/is}} class="navigation__item navigation-item-home" id="nav-home">
+    <li class="navigation__item{{#is id "home"}} is-active{{/is}}">
       <a href="./">Home</a>
     </li>
-    <li class="navigation__item" id="nav-about-us">
-      <a href="mission-and-projects.html">About&nbsp;Jiquilillo</a>
+    <li class="navigation__item{{#is id "about"}} is-active{{/is}}">
+      <a href="about-jiquilillo.html">About&nbsp;Jiquilillo</a>
     </li>
-    <li class="navigation__item" id="nav-about-us"><a href="mission-and-projects.html">Community&nbsp;Projects</a></li>
-    <li class="navigation__item" id="nav-volunteer"><a href="volunteer-opportunities.html">Volunteer&nbsp;Opportunities</a></li>
-    <li class="navigation__item" id="nav-excursions"><a href="excursions-and-activities.html">Activities&nbsp;&amp;&nbsp;Excursions</a></li>
-    <li class="navigation__item" id="nav-prices"><a href="accommodation-and-prices.html">Accommodation&nbsp;&amp;&nbsp;Prices</a></li>
-    <li class="navigation__item" id="nav-finding-us"><a href="finding-us.html">Finding&nbsp;us</a></li>
+    <li class="navigation__item{{#is id "projects"}} is-active{{/is}}">
+      <a href="community-projects.html">Community&nbsp;Projects</a>
+    </li>
+    <li class="navigation__item{{#is id "volunteer"}} is-active{{/is}}">
+      <a href="volunteer-opportunities.html">Volunteer&nbsp;Opportunities</a>
+    </li>
+    <li class="navigation__item{{#is id "prices"}} is-active{{/is}}">
+      <a href="accommodation-and-prices.html">Accommodation&nbsp;&amp;&nbsp;Prices</a>
+    </li>
+    <li class="navigation__item{{#is id "activities"}} is-active{{/is}}">
+      <a href="activities-and-excursions.html">Activities&nbsp;&amp;&nbsp;Excursions</a>
+    </li>
+    <li class="navigation__item{{#is id "find"}} is-active{{/is}}">
+      <a href="finding-us.html">Finding&nbsp;Us</a>
+    </li>
   </ul>
 </nav>
 
 <div class="complementary" role="complementary">
-  <ul>
-    <li><a class="icon icon--phone" href="tel:+50588791795">+505 8 879 1795</a></li>
-    <li><a class="icon icon--envelop" href="mailto:hola@rancho-esperanza.com">hola@rancho-esperanza.com</a></li>
+  <ul class="complementary__inner">
+    <li class="complementary__item"><a class="icon icon--phone" href="tel:+50588791795">+505 8 879 1795</a></li>
+    <li class="complementary__item"><a class="icon icon--envelop" href="mailto:hola@rancho-esperanza.com">hola@rancho-esperanza.com</a></li>
   </ul>
 </div>
 <footer class="contentinfo" role="contentinfo">
-  <p>The racho is <a href="for-sale.html">for sale</a>!</strong></p>
-  <a class="icon icon--facebook" href="#">Latest news</a> ~ <a class="icon icon--quill" href="#">Guest reviews</a>
-  <p>This website, like everything at Rancho Esperanza, was a team effort. We'd like to thank <a href="made-by.html">everyone</a> who helped. <strong></p>
+  <p>The racho is <strong><a href="for-sale.html">for sale</a>!</strong></p>
+  <ul class="contentinfo__external">
+    <li class="contentinfo__external-item"><a class="icon icon--facebook" href="https://www.facebook.com/rancho.esperanza.jiquilillo">Latest news</a></li>
+    <li class="contentinfo__external-item"><a class="icon icon--quill" href="http://www.tripadvisor.co.uk/Hotel_Review-g2167866-d1646502-Reviews-Rancho_Esperanza-Jiquilillo_Chinandega_Department.html">Guest reviews</a></li>
+    <li class="contentinfo__external-item"><a class="icon icon--dollar" href="http://fnd.us/c/dOyBe">Donate</a></li>
+  </ul>
+  <p>This website, like everything at Rancho Esperanza, was a team effort. We'd like to thank <a href="made-by.html">everyone</a> who helped.</p>
 </footer>

@@ -228,7 +228,7 @@ module.exports = function(grunt) {
   // only perform tasks on changed files
   grunt.event.on( 'watch', function( action, filepath ) {
 
-    console.log( 'WATCH EVENT', action, filepath );
+    /*console.log( 'WATCH EVENT', action, filepath );
 
     if (grunt.file.isMatch(grunt.config('watch.staticFiles.files'), filepath)) {
       console.log( 'WATCH EVENT static file', action, filepath );
@@ -246,7 +246,7 @@ module.exports = function(grunt) {
       console.log( 'WATCH EVENT image vector', action, filepath );
       grunt.config(['svgmin', 'all'], filepath);
       grunt.config(['copy', 'images'], filepath);
-    }
+    }*/
   });
 
   grunt.loadNpmTasks('assemble');

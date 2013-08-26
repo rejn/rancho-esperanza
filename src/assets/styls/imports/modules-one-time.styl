@@ -1,45 +1,49 @@
 /* =banner */
 .banner {
   margin: 0 0 1em 0;
-  padding: 0 0 0 0;
   text-align: center;
+  @media mq-medium {
+    margin-bottom: 7em;
+  }
 }
 
 .banner__menu {
-  display: none;
+  position: absolute;
+  right: 2.5%;
+  top: 0;
+  @media mq-medium {
+    display: none;
+  }
 }
 
 .banner__lang-selector {
+  left: 2.5%;
   position: absolute;
   top: 0;
-  left: 2.5%;
+}
+
+
+/* ==banner-es */
+.banner--es {
+  @media mq-medium {
+    margin-bottom: 1em;
+  }
 }
 
 
 
 /* =navigation */
 .navigation {
-  font-size: 14px;
+  font-size: 0.875em;
+  margin-top: 2em;
   @media mq-medium {
-    position: absolute;
-    top: 16em;
     left: 0;
-    width: 100%;
-    text-align: center;
     margin: 0;
     padding: 0;
-    & * {
-      display: inline-block;
-      margin: 0;
-      padding: 0;
-    }
-    li {
-      margin-right: 1.5em;
-      padding-left: 1.5em;
-      &:last-child {
-        margin-right: 0;
-      }
-    }
+    position: absolute;
+    text-align: center;
+    top: 16em;
+    width: 100%;
   }
 }
 
@@ -55,8 +59,24 @@
   padding: 0.5em 0;
   margin: 0;
   list-style: none;
-  &:after {
+  border-bottom: 1px dashed grey-light;
+  &.is-active {
+    background: grey-lightest;
+  }
+  &::after {
     float: right;
+  }
+  &:last-child {
+    border-bottom: none;
+  }
+  @media mq-medium {
+    border-bottom: none;
+    display: inline-block;
+    margin-right: 1.5em;
+    padding-left: 1.5em;
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
 
@@ -64,23 +84,34 @@
 
 /* =complementary */
 .complementary {
+  font-size: 13px;
   @media mq-medium {
     position: absolute;
     top: 0;
     right: 2.5%;
-    font-size: 13px;
     text-align: right;
   }
+}
+
+.complementary__inner {
+  padding: 0;
+}
+
+.complementary__item {
+  list-style: none;
+  padding: 0;
 }
 
 
 
 /* =contentinfo */
 .contentinfo {
+  border-top: 1px solid grey-light;
   color: grey-light;
   font-size: 13px;
   margin-top: 3em;
   text-align: center;
+  padding-top: 1em;
   @media mq-medium {
     margin-top: 6em;
   }
@@ -88,4 +119,15 @@
 
 .contentinfo__inner {
   font-size: 0.875em;
+}
+
+.contentinfo__external {
+  padding: 0;
+}
+
+.contentinfo__external-item {
+  display: inline-block;
+  list-style: none;
+  padding: 0 1em;
+  margin: 0;
 }
