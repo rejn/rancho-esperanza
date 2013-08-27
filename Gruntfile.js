@@ -48,15 +48,15 @@ module.exports = function(grunt) {
             dest: 'dist',
             expand: true,
             filter: 'isFile',
-            src: ['**/*.*', '**/.*', '!**/*.hbs', '!templates/**/*.*', 'assets/images/**/*.*', '!assets/scripts/**/*.*', '!assets/styls/**/*.*']
+            src: ['**/*.*', '**/.*', '!**/*.hbs', '!templates/**/*.*', '!assets/images/**/*.*', '!assets/scripts/**/*.*', '!assets/styls/**/*.*']
           }
         ]
       },
       scripts: {
         files: [
           {
-            cwd: 'src/assets/scripts',
-            dest: 'dist/assets/scripts',
+            cwd: 'src/assets/scripts/',
+            dest: 'dist/assets/scripts/',
             expand: true,
             filter: 'isFile',
             src: ['**/*.js']
@@ -66,8 +66,8 @@ module.exports = function(grunt) {
       images: {
         files: [
           {
-            cwd: 'src/assets/images',
-            dest: 'dist/assets/images',
+            cwd: 'src/assets/images/',
+            dest: 'dist/assets/images/',
             expand: true,
             filter: 'isFile',
             src: ['**/*.{png,jpg,svg}']
@@ -155,8 +155,8 @@ module.exports = function(grunt) {
       all: {
         files: [
           {
-            cwd: 'src/assets/images',
-            dest: 'src/assets/images',
+            cwd: 'src/assets/images/',
+            dest: 'src/assets/images/',
             expand: true,
             src: ['**/*.svg']
           }
@@ -183,21 +183,21 @@ module.exports = function(grunt) {
         files: ['src/assets/images/**/*.{jpg,png}'],
         tasks: ['imagemin', 'copy:images'],
         options: {
-          nospawn: true,
+          spawn: false
         }
       },
       imagesVector: {
         files: ['src/assets/images/**/*.svg'],
         tasks: ['svgmin', 'copy:images'],
         options: {
-          nospawn: true,
+          spawn: false
         }
       },
       staticFiles: {
         files: ['src/**/*.*', '!src/**/*.hbs', '!src/templates/**/*.*', '!src/assets/images/**/*.*', '!src/assets/styls/**/*.*' ],
         tasks: ['copy:staticFiles', 'copy:scripts'],
         options: {
-          nospawn: true
+          spawn: false
         }
       },
       stylus: {
@@ -209,7 +209,7 @@ module.exports = function(grunt) {
       dist: {
         options: {
           host: 'ftp.rancho-esperanza.com',
-          passive: true
+          ssive: false
         },
         files: [
           {
@@ -228,25 +228,26 @@ module.exports = function(grunt) {
   // only perform tasks on changed files
   grunt.event.on( 'watch', function( action, filepath ) {
 
-    /*console.log( 'WATCH EVENT', action, filepath );
-
+    var updateFilesArraySrc = function(configKey) {
+      grunt.config.set(configKey, grunt.config.get(configKey).map(function(file) {
+        file.src = filepath.replace(/\\/g, '/').replace(file.cwd, '');
+        return file;
+      }));
+    };
     if (grunt.file.isMatch(grunt.config('watch.staticFiles.files'), filepath)) {
-      console.log( 'WATCH EVENT static file', action, filepath );
-      grunt.config(['copy', 'staticFiles'], filepath);
-      grunt.config(['copy', 'scripts'], filepath);
+      updateFilesArraySrc(['copy', 'staticFiles', 'files']);
+      updateFilesArraySrc(['copy', 'scripts', 'files']);
     }
 
     if (grunt.file.isMatch(grunt.config('watch.imagesRaster.files'), filepath)) {
-      console.log( 'WATCH EVENT image', action, filepath );
-      grunt.config(['imagemin', 'all'], filepath);
-      grunt.config(['copy', 'images'], filepath);
+      updateFilesArraySrc(['imagemin', 'all', 'files']);
+      updateFilesArraySrc(['copy', 'images', 'files']);
     }
 
     if (grunt.file.isMatch(grunt.config('watch.imagesVector.files'), filepath)) {
-      console.log( 'WATCH EVENT image vector', action, filepath );
-      grunt.config(['svgmin', 'all'], filepath);
-      grunt.config(['copy', 'images'], filepath);
-    }*/
+      updateFilesArraySrc(['svgmin', 'all', 'files']);
+      updateFilesArraySrc(['copy', 'images', 'files']);
+    }
   });
 
   grunt.loadNpmTasks('assemble');
