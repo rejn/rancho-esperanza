@@ -208,8 +208,8 @@ module.exports = function(grunt) {
     ftpscript: {
       dist: {
         options: {
-          host: 'ftp.rancho-esperanza.com',
-          ssive: false
+          host: 'ftp.richardhallows.com',
+          passive: false
         },
         files: [
           {
@@ -218,7 +218,7 @@ module.exports = function(grunt) {
             src: [
               '**/*.*'
             ],
-            dest: '/public_html/test/'
+            dest: '/httpdocs/'
           }
         ]
       }
@@ -289,10 +289,7 @@ module.exports = function(grunt) {
       'assemble:prod',
       'htmlmin:prod',
       'stylus:prod',
-      'uglify:prod',
-      'express:prod',
-      'open:prod',
-      'express-keepalive'
+      'uglify:prod'
     ]
   );
 
