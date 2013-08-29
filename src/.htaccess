@@ -5,6 +5,12 @@
 # to the main server config file (usually called `httpd.conf`), you should add
 # this logic there: http://httpd.apache.org/docs/current/howto/htaccess.html.
 
+# dev.richardhallows.com auto
+AuthType Basic
+AuthName "Development"
+AuthUserFile /var/www/vhosts/richardhallows.com/subdomains/dev/httpdocs/.htpasswd
+Require valid-user
+
 #rancho redirect
 redirect 301 /surf-camp-and-club.html /excursions-and-activities.html
 redirect 301 /about-us.html /mission-and-projects.html

@@ -7,7 +7,10 @@ module.exports = function(grunt) {
         jshintrc: '.jshintrc'
       },
       gruntfile: ['Gruntfile.js'],
-      all: ['src/assets/scripts/**/*.js', '!src/assets/scripts/libs/**/*.js']
+      all: [
+        'src/assets/scripts/**/*.js',
+        '!src/assets/scripts/libs/**/*.js'
+      ]
     },
     assemble: {
       options: {
@@ -35,7 +38,7 @@ module.exports = function(grunt) {
       }
     },
     clean: {
-      dist: ['dist/**/*']
+      dist: ['dist/**']
     },
     copy: {
       options: {
@@ -48,7 +51,15 @@ module.exports = function(grunt) {
             dest: 'dist',
             expand: true,
             filter: 'isFile',
-            src: ['**/*.*', '**/.*', '!**/*.hbs', '!templates/**/*.*', '!assets/images/**/*.*', '!assets/scripts/**/*.*', '!assets/styls/**/*.*']
+            src: [
+              '**',
+              '**/.*',
+              '!**/*.hbs',
+              '!templates/**/*.*',
+              '!assets/images/**/*.*',
+              '!assets/scripts/**/*.*',
+              '!assets/styls/**/*.*'
+            ]
           }
         ]
       },
@@ -75,18 +86,6 @@ module.exports = function(grunt) {
         ]
       }
     },
-    imagemin: {
-      all: {
-        files: [
-          {
-            cwd: 'src/assets/images/',
-            dest: 'src/assets/images/',
-            expand: true,
-            src: '**/*.{png,jpg}'
-          }
-        ]
-      }
-    },
     express: {
       options: {
         hostname: '*',
@@ -104,6 +103,39 @@ module.exports = function(grunt) {
         }
       }
     },
+    ftpscript: {
+      options: {
+        host: 'ftp.richardhallows.com',
+        passive: false
+      },
+      all: {
+        files: [
+          {
+            expand: true,
+            cwd: 'dist',
+            src: [
+              '**',
+              '**/.*'
+            ],
+            dest: '/httpdocs/'
+          }
+        ]
+      },
+      withoutAssets: {
+        files: [
+          {
+            expand: true,
+            cwd: 'dist',
+            src: [
+              '**',
+              '**/.*',
+              '!assets/**'
+            ],
+            dest: '/httpdocs/'
+          }
+        ]
+      }
+    },
     htmlmin: {
       prod: {
         options: {
@@ -116,6 +148,18 @@ module.exports = function(grunt) {
             dest: 'dist/',
             expand: true,
             src: ['**/*.html']
+          }
+        ]
+      }
+    },
+    imagemin: {
+      all: {
+        files: [
+          {
+            cwd: 'src/assets/images/',
+            dest: 'src/assets/images/',
+            expand: true,
+            src: '**/*.{png,jpg}'
           }
         ]
       }
@@ -180,48 +224,44 @@ module.exports = function(grunt) {
         tasks: ['jshint:gruntfile']
       },
       imagesRaster: {
-        files: ['src/assets/images/**/*.{jpg,png}'],
-        tasks: ['imagemin', 'copy:images'],
         options: {
           spawn: false
-        }
+        },
+        files: ['src/assets/images/**/*.{jpg,png}'],
+        tasks: [
+          'imagemin',
+          'copy:images'
+        ]
       },
       imagesVector: {
-        files: ['src/assets/images/**/*.svg'],
-        tasks: ['svgmin', 'copy:images'],
         options: {
           spawn: false
-        }
+        },
+        files: ['src/assets/images/**/*.svg'],
+        tasks: [
+          'svgmin',
+          'copy:images'
+        ]
       },
       staticFiles: {
-        files: ['src/**/*.*', '!src/**/*.hbs', '!src/templates/**/*.*', '!src/assets/images/**/*.*', '!src/assets/styls/**/*.*' ],
-        tasks: ['copy:staticFiles', 'copy:scripts'],
         options: {
           spawn: false
-        }
+        },
+        files: [
+          'src/**/',
+          '!src/**/*.hbs',
+          '!src/templates/**/',
+          '!src/assets/images/**/',
+          '!src/assets/styls/**/' ],
+        tasks: [
+          'copy:staticFiles',
+          'copy:scripts'
+        ]
       },
       stylus: {
         files: ['src/assets/styls/**/*.styl'],
         tasks: ['stylus:dev']
       },
-    },
-    ftpscript: {
-      dist: {
-        options: {
-          host: 'ftp.richardhallows.com',
-          passive: false
-        },
-        files: [
-          {
-            expand: true,
-            cwd: 'dist',
-            src: [
-              '**/*.*'
-            ],
-            dest: '/httpdocs/'
-          }
-        ]
-      }
     }
   });
 
@@ -305,7 +345,14 @@ module.exports = function(grunt) {
   grunt.registerTask('deploy',
     [
       'build',
-      'ftpscript'
+      'ftpscript:withoutAssets'
+    ]
+  );
+
+  grunt.registerTask('deploy:all',
+    [
+      'build',
+      'ftpscript:all'
     ]
   );
 };
