@@ -217,7 +217,7 @@ module.exports = function(grunt) {
     watch: {
       assemble: {
         files: ['src/**/*.hbs'],
-        tasks: ['assemble']
+        tasks: ['assemble:dev']
       },
       gruntfile: {
         files: 'Gruntfile.js',

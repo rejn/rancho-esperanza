@@ -25,6 +25,9 @@
     if (gmaps && 900 < window.screen.width) {
       gmaps.innerHTML = '<div class="embed"><iframe class="embed__inner" width="100%" height="100%" frameborder="0" src="//maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=+&amp;q=Rancho+Esperanza,+Jiquilillo,+Chinandega,+Nicaragua&amp;ie=UTF8&amp;hq=Rancho+Esperanza,&amp;hnear=Jiquilillo,+Chinandega,+Nicaragua&amp;t=m&amp;cid=7029103330845734291&amp;ll=12.734122,-87.442932&amp;spn=1.607365,1.771545&amp;z=9&amp;iwloc=A&amp;output=embed"></iframe></div>';
     }
+
+    // track events
+    //_gaq.push(['_trackEvent', 'email', 'send' ,,true]); // tel, email in comp and call to action
   };
 
 }(this, this.document));
