@@ -248,7 +248,8 @@ module.exports = function(grunt) {
           spawn: false
         },
         files: [
-          'src/**/',
+          'src/**',
+          'src/.*',
           '!src/**/*.hbs',
           '!src/templates/**/',
           '!src/assets/images/**/',
