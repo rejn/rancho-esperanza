@@ -9,12 +9,11 @@ body {
   font-family: font-family-bitter;
   font-size: 1em;
   line-height: 1.6;
-  margin: 0 auto;
-  max-width: 46em;
-  padding: 2em 5%;
-  position: relative;
+  margin: 0;
   .old-ie & {
-    width: 500px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 605px;
   }
 }
 
@@ -22,8 +21,8 @@ body {
 
 /* =links */
 a {
-  color: blue;
-  border-bottom: 0.063em dotted blue;
+  color: green;
+  border-bottom: 0.063em dotted green;
   text-decoration: none;
   &:focus {
     outline: thin dotted;
@@ -43,21 +42,33 @@ h2,
 h3 {
   clear: both;
   font-family: Paprika, cursive;
-  font-size: 2.375em;
   font-weight: normal;
   line-height: 1.4;
   margin: 0 0.5em 1.5em 0.5em;
   text-align: center;
 }
 
-h2 {
+h1 {
   font-size: 2em;
+  @media mq-medium {
+    font-size: 2.375em;
+  }
+}
+
+h2 {
+  font-size: 1.5em;
   padding-top: 1em;
+  @media mq-medium {
+    font-size: 2em;
+  }
 }
 
 h3 {
-  font-size: 1.5em;
+  font-size: 1.25em;
   padding-top: 1em;
+  @media mq-medium {
+    font-size: 1.5em;
+  }
 }
 
 h1 + h2,
@@ -121,6 +132,7 @@ td {
 
 /* =embedding content */
 img {
+  border: none;
   height: auto;
   max-width: 100%;
   vertical-align: middle;
@@ -133,9 +145,15 @@ figure {
   clear: both;
   display: table;
   margin: 1em auto 2em auto;
+  max-width: 100%;
+  text-align: center;
   img {
-    display: block;
-    max-width: 100%;
+    display: table-cell;
+    width: 100%;
+    .old-ie & {
+      display: block;
+      width: auto;
+    }
   }
 }
 
@@ -145,7 +163,7 @@ figcaption {
   display: table-caption;
   font-size: 0.813em;
   font-style: italic;
+  max-width: 100%;
   padding: 1em 3% 0 3%;
   text-align: center;
 }
-

@@ -12,9 +12,12 @@
   </head>
   <body>
     {{> body }}
-    {{#dev}}{{/dev}}
-    <script src="{{ assets }}/scripts/postscribe.min.js"></script>
     <script src="{{ assets }}/scripts/core.js"></script>
-    <div id="core"></div>
+    <script>
+      var _gaq=[['_setAccount','xxx'],['_trackPageview']];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src='//www.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
   </body>
 </html>

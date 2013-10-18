@@ -1,9 +1,12 @@
 /* =banner */
 .banner {
+  background: green;
+  color: white;
   margin: 0 0 1em 0;
   text-align: center;
+  padding-top: 1em;
   @media mq-medium {
-    margin-bottom: 7em;
+    padding-bottom: 8em;
   }
 }
 
@@ -11,12 +14,16 @@
   position: absolute;
   right: 2.5%;
   top: 0;
+  color: white;
+  border-bottom: none;
   @media mq-medium {
     display: none;
   }
 }
 
 .banner__lang-selector {
+  border-bottom: none;
+  color: white;
   left: 2.5%;
   position: absolute;
   top: 0;
@@ -30,6 +37,7 @@
   }
 }
 
+
 /* ==banner--campaign */
 .banner--campaign {
   @media mq-medium {
@@ -39,9 +47,18 @@
 
 
 
+/* =main */
+.main {
+  margin: 0 auto;
+  max-width: 46em;
+  padding: 2em 5%;
+  position: relative;
+}
+
+
+
 /* =navigation */
 .navigation {
-  font-size: 0.875em;
   margin-top: 2em;
   @media mq-medium {
     left: 0;
@@ -49,7 +66,7 @@
     padding: 0;
     position: absolute;
     text-align: center;
-    top: 16em;
+    top: 14em;
     width: 100%;
   }
 }
@@ -68,7 +85,7 @@
   list-style: none;
   border-bottom: 1px dashed grey-light;
   &.is-active {
-    background: grey-lightest;
+    color: black;
   }
   &::after {
     float: right;
@@ -79,10 +96,36 @@
   @media mq-medium {
     border-bottom: none;
     display: inline-block;
-    margin-right: 1.5em;
-    padding-left: 1.5em;
+    margin-right: 0.5em;
+    padding-left: 0.5em;
     &:last-child {
       margin-right: 0;
+    }
+  }
+}
+
+.navigation__item-inner {
+  display: block;
+  border: none;
+  margin: 0 5%;
+  &::after {
+    content: '>';
+    float: right;
+  }
+  &:hover {
+    border: none;
+    color: black;
+  }
+  @media mq-medium {
+    color: white;
+    border: none;
+    display: inline;
+    margin: 0;
+    &::after {
+      display: none;
+    }
+    .is-active & {
+      color: black;
     }
   }
 }
@@ -91,22 +134,32 @@
 
 /* =complementary */
 .complementary {
-  font-size: 13px;
   @media mq-medium {
     position: absolute;
-    top: 0;
     right: 2.5%;
     text-align: right;
+    top: 0;
   }
 }
 
 .complementary__inner {
   padding: 0;
+  margin: 0 5%;
+  @media mq-medium {
+    margin: 0;
+  }
 }
 
 .complementary__item {
   list-style: none;
   padding: 0;
+}
+
+.complementary__item-inner {
+  @media mq-medium {
+    border: none;
+    color: white;
+  }
 }
 
 
@@ -115,30 +168,43 @@
 .contentinfo {
   border-top: 1px solid grey-light;
   color: grey-light;
-  font-size: 13px;
   margin-top: 3em;
   text-align: center;
   padding-top: 1em;
   @media mq-medium {
-    margin-top: 6em;
+    margin-top: 3em;
   }
 }
 
 .contentinfo__inner {
-  font-size: 0.875em;
+  margin: 0 auto 0 auto;
+  max-width: 46em;
+  padding: 2em 5%;
 }
 
 .contentinfo__external {
   clear: fix;
   padding: 0;
-  margin: 0 auto 1em auto;
-  max-width: 400px;
+
 }
 
 .contentinfo__external-item {
   display: block;
-  float: left;
   list-style: none;
-  margin: 0;
-  padding: 0 1em;
+  margin: 0 0 1em 0;
+  padding: 0;
+}
+
+.contentinfo__external-item--facebook {
+  @media screen and (min-width: 28em) {
+    float: left;
+    width: 195px;
+  }
+}
+
+.contentinfo__external-item--tripadvisor {
+  @media screen and (min-width: 28em) {
+    float: right;
+    width: 152px;
+  }
 }

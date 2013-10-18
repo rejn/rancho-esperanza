@@ -94,7 +94,8 @@ module.exports = function(grunt) {
       dev: {
         options: {
           livereload: true,
-          port: 9000
+          port: 9000,
+          spawn: false
         }
       },
       prod: {
@@ -251,9 +252,9 @@ module.exports = function(grunt) {
           'src/**',
           'src/.*',
           '!src/**/*.hbs',
-          '!src/templates/**/',
-          '!src/assets/images/**/',
-          '!src/assets/styls/**/' ],
+          '!src/templates/**',
+          '!src/assets/images/**',
+          '!src/assets/styls/**' ],
         tasks: [
           'copy:staticFiles',
           'copy:scripts'

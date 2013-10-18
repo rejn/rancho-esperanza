@@ -8,32 +8,32 @@ lang: "en"
   <a class="banner__menu icon icon--menu" href="#navigation">Menu</a>
 </header>
 
-<div role="main">
+<div class="main" role="main">
   {{> body }}
 </div>
 
 <nav class="navigation" id="navigation" role="navigation">
   <ul class="navigation__inner">
     <li class="navigation__item{{#is id "home"}} is-active{{/is}}">
-      <a href="./">Home</a>
+      <a class="navigation__item-inner" href="./">Home</a>
     </li>
     <li class="navigation__item{{#is id "about"}} is-active{{/is}}">
-      <a href="about-jiquilillo.html">About&nbsp;Jiquilillo</a>
+      <a class="navigation__item-inner" href="about-jiquilillo.html">About&nbsp;Jiquilillo</a>
     </li>
     <li class="navigation__item{{#is id "projects"}} is-active{{/is}}">
-      <a href="community-projects.html">Community&nbsp;Projects</a>
+      <a class="navigation__item-inner" href="community-projects.html">Community&nbsp;Projects</a>
     </li>
     <li class="navigation__item{{#is id "volunteer"}} is-active{{/is}}">
-      <a href="volunteer-opportunities.html">Volunteer&nbsp;Opportunities</a>
+      <a class="navigation__item-inner" href="volunteer-opportunities.html">Volunteer&nbsp;Opportunities</a>
     </li>
     <li class="navigation__item{{#is id "prices"}} is-active{{/is}}">
-      <a href="accommodation-and-prices.html">Accommodation&nbsp;&amp;&nbsp;Prices</a>
+      <a class="navigation__item-inner" href="accommodation-and-prices.html">Accommodation&nbsp;&amp;&nbsp;Prices</a>
     </li>
     <li class="navigation__item{{#is id "activities"}} is-active{{/is}}">
-      <a href="activities-and-excursions.html">Activities&nbsp;&amp;&nbsp;Excursions</a>
+      <a class="navigation__item-inner" href="activities-and-excursions.html">Activities&nbsp;&amp;&nbsp;Excursions</a>
     </li>
     <li class="navigation__item{{#is id "find"}} is-active{{/is}}">
-      <a href="finding-us.html">Finding&nbsp;Us</a>
+      <a class="navigation__item-inner" href="finding-us.html">Finding&nbsp;Us</a>
     </li>
   </ul>
 </nav>
@@ -41,11 +41,11 @@ lang: "en"
 {{> complementary}}
 
 <footer class="contentinfo" role="contentinfo">
-
-  <ul class="contentinfo__external">
-    <li class="contentinfo__external-item" data-widget="facebook"><a href="https://www.facebook.com/rancho.esperanza.jiquilillo">Latest news</a></li>
-    <li class="contentinfo__external-item"><a href="http://www.tripadvisor.co.uk/Hotel_Review-g2167866-d1646502-Reviews-Rancho_Esperanza-Jiquilillo_Chinandega_Department.html"><img alt="Tripadvisor" height="213" src="assets/images/tripadvisor.png" width="152"></a></li>
-  </ul>
-  <p>The rancho is <strong><a href="for-sale.html">for sale</a>!</strong></p>
-  <p>This website, like everything at Rancho Esperanza, was a team effort. We'd like to thank <a href="made-by.html">everyone</a> who helped.</p>
+  <div class="contentinfo__inner">
+    <ul class="contentinfo__external">
+      <li class="contentinfo__external-item contentinfo__external-item--facebook" data-widget="facebook"><a href="https://www.facebook.com/rancho.esperanza.jiquilillo">Find us on Facebook</a></li>
+      <li class="contentinfo__external-item contentinfo__external-item--tripadvisor"><a href="http://www.tripadvisor.co.uk/Hotel_Review-g2167866-d1646502-Reviews-Rancho_Esperanza-Jiquilillo_Chinandega_Department.html"><img alt="Tripadvisor" height="213" src="assets/images/tripadvisor.png" width="152"></a></li>
+    </ul>
+    <p>This website, like everything at Rancho Esperanza, was a team effort. We'd like to thank <a href="made-by.html">everyone</a> who helped. The rancho is <a href="for-sale.html">for sale</a>.</p>
+  </div>
 </footer>
