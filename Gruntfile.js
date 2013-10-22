@@ -1,59 +1,99 @@
 module.exports = function(grunt) {
 
   grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
-    jshint: {
-      options: {
-        jshintrc: '.jshintrc'
-      },
-      gruntfile: ['Gruntfile.js'],
-      all: [
-        'src/assets/scripts/**/*.js',
-        '!src/assets/scripts/libs/**/*.js'
-      ]
+
+    // config settings
+    settings: {
+      src: 'src',
+      dist: 'dist'
     },
+
+    // read package
+    pkg: grunt.file.readJSON('package.json'),
+
+    // tasks
     assemble: {
       options: {
-        assets: 'dist/assets',
+        assets: '<%= settings.dist %>/assets',
         flatten: true,
         layout: 'en.hbs',
-        layoutdir: 'src/templates/layouts',
-        partials: ['src/templates/partials/**/*.{hbs,md}']
+        layoutdir: '<%= settings.src %>/templates/layouts',
+        partials: ['<%= settings.src %>/templates/partials/**/*.{hbs,md}']
       },
       dev: {
         options: {
           dev: true,
           prod: false
         },
-        src: ['src/*.hbs'],
-        dest: 'dist/'
+        src: ['<%= settings.src %>/*.hbs'],
+        dest: '<%= settings.dist %>/'
       },
       prod: {
         options: {
           dev: false,
           prod: true
         },
-        src: ['src/*.hbs'],
-        dest: 'dist/'
+        src: ['<%= settings.src %>/*.hbs'],
+        dest: '<%= settings.dist %>/'
       }
     },
     clean: {
-      dist: ['dist/**']
+      dist: ['<%= settings.dist %>/**']
+    },
+    connect: {
+      options: {
+        base: '<%= settings.dist %>',
+        open: true
+      },
+      dev: {
+        options: {
+          livereload: true,
+          port: 9000
+        }
+      },
+      prod: {
+        options: {
+          keepalive: true,
+          port: 3000
+        }
+      }
     },
     copy: {
       options: {
         processContentExclude: ['.DS_Store', '.gitignore', 'node_modules']
       },
+      images: {
+        files: [
+          {
+            cwd: '<%= settings.src %>/assets/images/',
+            dest: '<%= settings.dist %>/assets/images/',
+            expand: true,
+            filter: 'isFile',
+            src: ['**/*.{png,jpg,svg}']
+          }
+        ]
+      },
+      scripts: {
+        files: [
+          {
+            cwd: '<%= settings.src %>/assets/scripts/',
+            dest: '<%= settings.dist %>/assets/scripts/',
+            expand: true,
+            filter: 'isFile',
+            src: ['**/*.js']
+          }
+        ]
+      },
       staticFiles: {
         files: [
           {
-            cwd: 'src',
-            dest: 'dist',
+            cwd: '<%= settings.src %>',
+            dest: '<%= settings.dist %>',
             expand: true,
             filter: 'isFile',
             src: [
-              '**',
               '**/.*',
+              '**/*.*',
               '!**/*.hbs',
               '!templates/**/*.*',
               '!assets/images/**/*.*',
@@ -62,46 +102,6 @@ module.exports = function(grunt) {
             ]
           }
         ]
-      },
-      scripts: {
-        files: [
-          {
-            cwd: 'src/assets/scripts/',
-            dest: 'dist/assets/scripts/',
-            expand: true,
-            filter: 'isFile',
-            src: ['**/*.js']
-          }
-        ]
-      },
-      images: {
-        files: [
-          {
-            cwd: 'src/assets/images/',
-            dest: 'dist/assets/images/',
-            expand: true,
-            filter: 'isFile',
-            src: ['**/*.{png,jpg,svg}']
-          }
-        ]
-      }
-    },
-    express: {
-      options: {
-        hostname: '*',
-        bases: ['dist']
-      },
-      dev: {
-        options: {
-          livereload: true,
-          port: 9000,
-          spawn: false
-        }
-      },
-      prod: {
-        options: {
-          port: 3000
-        }
       }
     },
     ftpscript: {
@@ -113,7 +113,7 @@ module.exports = function(grunt) {
         files: [
           {
             expand: true,
-            cwd: 'dist',
+            cwd: '<%= settings.dist %>',
             src: [
               '**',
               '**/.*'
@@ -126,7 +126,7 @@ module.exports = function(grunt) {
         files: [
           {
             expand: true,
-            cwd: 'dist',
+            cwd: '<%= settings.dist %>',
             src: [
               '**',
               '**/.*',
@@ -145,8 +145,8 @@ module.exports = function(grunt) {
         },
         files: [
           {
-            cwd: 'dist/',
-            dest: 'dist/',
+            cwd: '<%= settings.dist %>/',
+            dest: '<%= settings.dist %>/',
             expand: true,
             src: ['**/*.html']
           }
@@ -157,21 +157,22 @@ module.exports = function(grunt) {
       all: {
         files: [
           {
-            cwd: 'src/assets/images/',
-            dest: 'src/assets/images/',
+            cwd: '<%= settings.src %>/assets/images/',
+            dest: '<%= settings.src %>/assets/images/',
             expand: true,
             src: '**/*.{png,jpg}'
           }
         ]
       }
     },
-    open: {
-      dev: {
-        url: 'http://localhost:<%= express.dev.options.port %>'
+    jshint: {
+      options: {
+        jshintrc: '.jshintrc'
       },
-      prod: {
-        url: 'http://localhost:<%= express.prod.options.port %>'
-      }
+      gruntfile: ['Gruntfile.js'],
+      all: [
+        '<%= settings.src %>/assets/scripts/**/*.js',
+      ]
     },
     stylus: {
       dev: {
@@ -179,7 +180,7 @@ module.exports = function(grunt) {
           compress: false
         },
         files: {
-          'dist/assets/styles/core.css': 'src/assets/styls/core.styl'
+          '<%= settings.dist %>/assets/styles/core.css': '<%= settings.src %>/assets/styls/core.styl'
         }
       },
       prod: {
@@ -187,7 +188,7 @@ module.exports = function(grunt) {
           compress: true
         },
         files: {
-          'dist/assets/styles/core.css': 'src/assets/styls/core.styl'
+          '<%= settings.dist %>/assets/styles/core.css': '<%= settings.src %>/assets/styls/core.styl'
         }
       }
     },
@@ -200,8 +201,8 @@ module.exports = function(grunt) {
       all: {
         files: [
           {
-            cwd: 'src/assets/images/',
-            dest: 'src/assets/images/',
+            cwd: '<%= settings.src %>/assets/images/',
+            dest: '<%= settings.src %>/assets/images/',
             expand: true,
             src: ['**/*.svg']
           }
@@ -211,136 +212,93 @@ module.exports = function(grunt) {
     uglify: {
       prod: {
         files: {
-          'dist/assets/scripts/core.js': ['src/assets/scripts/core.js']
+          '<%= settings.dist %>/assets/scripts/core.js': ['<%= settings.src %>/assets/scripts/core.js']
         }
       }
     },
     watch: {
       assemble: {
-        files: ['src/**/*.hbs'],
+        files: ['<%= settings.src %>/**/*.hbs'],
         tasks: ['assemble:dev']
+      },
+      dist: {
+        options: {
+          livereload: true,
+        },
+        files: [
+          '<%= settings.dist %>/**/*.html',
+          '<%= settings.dist %>/assets/images/**/*.{png,jpg,jpeg,gif,webp,svg}',
+          '<%= settings.dist %>/assets/scripts/**/*.js',
+          '<%= settings.dist %>/assets/styles/**/*.css'
+        ]
       },
       gruntfile: {
         files: 'Gruntfile.js',
         tasks: ['jshint:gruntfile']
       },
       imagesRaster: {
-        options: {
-          spawn: false
-        },
-        files: ['src/assets/images/**/*.{jpg,png}'],
+        files: ['<%= settings.src %>/assets/images/**/*.{jpg,png}'],
         tasks: [
-          'imagemin',
-          'copy:images'
+          'newer:imagemin',
+          'newer:copy:images'
         ]
       },
       imagesVector: {
-        options: {
-          spawn: false
-        },
-        files: ['src/assets/images/**/*.svg'],
+        files: ['<%= settings.src %>/assets/images/**/*.svg'],
         tasks: [
-          'svgmin',
-          'copy:images'
+          'newer:svgmin',
+          'newer:copy:images'
         ]
       },
       staticFiles: {
-        options: {
-          spawn: false
-        },
         files: [
-          'src/**',
-          'src/.*',
-          '!src/**/*.hbs',
-          '!src/templates/**',
-          '!src/assets/images/**',
-          '!src/assets/styls/**' ],
+          '<%= settings.src %>/**/*',
+          '<%= settings.src %>/.*',
+          '!<%= settings.src %>/**/*.hbs',
+          '!<%= settings.src %>/templates/**',
+          '!<%= settings.src %>/assets/images/**/*',
+          '!<%= settings.src %>/assets/styls/**/*' ],
         tasks: [
-          'copy:staticFiles',
-          'copy:scripts'
+          'newer:copy:staticFiles',
+          'newer:copy:scripts'
         ]
       },
       stylus: {
-        files: ['src/assets/styls/**/*.styl'],
+        files: ['<%= settings.src %>/assets/styls/**/*.styl'],
         tasks: ['stylus:dev']
       },
     }
   });
 
-  // only perform tasks on changed files
-  grunt.event.on( 'watch', function( action, filepath ) {
-
-    var updateFilesArraySrc = function(configKey) {
-      grunt.config.set(configKey, grunt.config.get(configKey).map(function(file) {
-        file.src = filepath.replace(/\\/g, '/').replace(file.cwd, '');
-        return file;
-      }));
-    };
-    if (grunt.file.isMatch(grunt.config('watch.staticFiles.files'), filepath)) {
-      updateFilesArraySrc(['copy', 'staticFiles', 'files']);
-      updateFilesArraySrc(['copy', 'scripts', 'files']);
-    }
-
-    if (grunt.file.isMatch(grunt.config('watch.imagesRaster.files'), filepath)) {
-      updateFilesArraySrc(['imagemin', 'all', 'files']);
-      updateFilesArraySrc(['copy', 'images', 'files']);
-    }
-
-    if (grunt.file.isMatch(grunt.config('watch.imagesVector.files'), filepath)) {
-      updateFilesArraySrc(['svgmin', 'all', 'files']);
-      updateFilesArraySrc(['copy', 'images', 'files']);
-    }
-  });
-
+  // load tasks
+  require('load-grunt-tasks')(grunt);
   grunt.loadNpmTasks('assemble');
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-contrib-htmlmin');
-  grunt.loadNpmTasks('grunt-contrib-imagemin');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-stylus');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-express');
-  grunt.loadNpmTasks('grunt-ftpscript');
-  grunt.loadNpmTasks('grunt-open');
-  grunt.loadNpmTasks('grunt-svgmin');
 
-  grunt.registerTask('default',
+  // register tasks
+  grunt.registerTask('prep',
     [
       'jshint',
       'clean',
       'imagemin',
       'svgmin',
-      'copy',
-      'stylus:dev',
-      'assemble:dev',
-      'express:dev',
-      'open:dev',
-      'watch'
+      'copy'
     ]
   );
 
   grunt.registerTask('build',
     [
-      'jshint',
-      'clean',
-      'imagemin',
-      'svgmin',
-      'copy',
-      'assemble:prod',
-      'htmlmin:prod',
+      'prep',
       'stylus:prod',
-      'uglify:prod'
+      'uglify:prod',
+      'assemble:prod',
+      'htmlmin:prod'
     ]
   );
 
   grunt.registerTask('preview',
     [
       'build',
-      'express:prod',
-      'open:prod',
-      'express-keepalive'
+      'connect:prod'
     ]
   );
 
@@ -355,6 +313,16 @@ module.exports = function(grunt) {
     [
       'build',
       'ftpscript:all'
+    ]
+  );
+
+  grunt.registerTask('default',
+    [
+      'prep',
+      'stylus:dev',
+      'assemble:dev',
+      'connect:dev',
+      'watch'
     ]
   );
 };
