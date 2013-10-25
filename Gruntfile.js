@@ -1,5 +1,9 @@
 module.exports = function(grunt) {
 
+  // load all tasks
+  require('load-grunt-tasks')(grunt, {pattern: ['grunt-*', 'assemble']});
+
+  // setup config
   grunt.initConfig({
 
     // config settings
@@ -35,6 +39,12 @@ module.exports = function(grunt) {
         },
         src: ['<%= settings.src %>/*.hbs'],
         dest: '<%= settings.dist %>/'
+      }
+    },
+    autoprefixer: {
+      all: {
+        src: '<%= settings.dist %>/assets/styles/core.css',
+        dest: '<%= settings.dist %>/assets/styles/core.css'
       }
     },
     clean: {
@@ -102,6 +112,17 @@ module.exports = function(grunt) {
             ]
           }
         ]
+      }
+    },
+    cssmin: {
+      options: {
+        banner: '/*!\n* Built from stylus source at <%= pkg.repository.url %> on <%= grunt.template.today("yyyy-mm-dd") %>\n*/\n',
+        report: 'min',
+      },
+      prod: {
+        files: {
+          '<%= settings.dist %>/assets/styles/core.css': '<%= settings.dist %>/assets/styles/core.css'
+        }
       }
     },
     ftpscript: {
@@ -175,18 +196,7 @@ module.exports = function(grunt) {
       ]
     },
     stylus: {
-      dev: {
-        options: {
-          compress: false
-        },
-        files: {
-          '<%= settings.dist %>/assets/styles/core.css': '<%= settings.src %>/assets/styls/core.styl'
-        }
-      },
-      prod: {
-        options: {
-          compress: true
-        },
+      all: {
         files: {
           '<%= settings.dist %>/assets/styles/core.css': '<%= settings.src %>/assets/styls/core.styl'
         }
@@ -263,16 +273,15 @@ module.exports = function(grunt) {
           'newer:copy:scripts'
         ]
       },
-      stylus: {
+      css: {
         files: ['<%= settings.src %>/assets/styls/**/*.styl'],
-        tasks: ['stylus:dev']
+        tasks: [
+          'stylus',
+          'autoprefixer'
+        ]
       },
     }
   });
-
-  // load tasks
-  require('load-grunt-tasks')(grunt);
-  grunt.loadNpmTasks('assemble');
 
   // register tasks
   grunt.registerTask('prep',
@@ -281,14 +290,16 @@ module.exports = function(grunt) {
       'clean',
       'imagemin',
       'svgmin',
-      'copy'
+      'copy',
+      'stylus',
+      'autoprefixer',
     ]
   );
 
   grunt.registerTask('build',
     [
       'prep',
-      'stylus:prod',
+      'cssmin:prod',
       'uglify:prod',
       'assemble:prod',
       'htmlmin:prod'
@@ -319,7 +330,6 @@ module.exports = function(grunt) {
   grunt.registerTask('default',
     [
       'prep',
-      'stylus:dev',
       'assemble:dev',
       'connect:dev',
       'watch'
