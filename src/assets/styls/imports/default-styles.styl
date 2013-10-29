@@ -10,8 +10,9 @@ body {
   line-height: 1.6;
   margin: 0;
   .old-ie & {
-    padding-left: 15px;
-    padding-right: 15px;
+    margin: auto;
+    padding: 0 15px;
+    position: relative;
     width: 605px;
   }
 }
@@ -21,7 +22,7 @@ body {
 /* =links */
 a {
   color: green;
-  border-bottom: 0.063em dotted green;
+  border-bottom: 1px dotted green;
   text-decoration: none;
   &:focus {
     outline: thin dotted;
@@ -43,18 +44,21 @@ h3 {
   font-family: Paprika, cursive;
   font-weight: normal;
   line-height: 1.4;
-  margin: 0 0.5em 1.5em 0.5em;
+  padding: 0 0.5em 0.75em 0.5em;
+  margin-bottom: 1em;
   text-align: center;
 }
 
 h1 {
-  font-size: 2em;
+  background: url('../images/common-swiggle.svg') no-repeat bottom center;
+  font-size: 30px;
   @media mq-medium {
     font-size: 2.375em;
   }
 }
 
 h2 {
+  background: url('../images/common-wave.svg') no-repeat bottom center;
   font-size: 1.5em;
   padding-top: 1em;
   @media mq-medium {

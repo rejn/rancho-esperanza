@@ -1,19 +1,25 @@
 (function(window, document, undefined) {
 
+  /* global Modernizr */
   'use strict';
 
-  if ('querySelector' in document && 'addEventListener' in window) {
+  if ('querySelector' in document &&
+      'addEventListener' in window &&
+      Modernizr.dataset) {
 
     window.addEventListener('load', function() {
 
+      // get nodelists
       var widgets = document.querySelectorAll('[data-widget]'),
+        widows = document.querySelectorAll('p, a, [data-widow]'),
         head = document.querySelector('head');
 
+      // process widgets
       for (var i = 0; i < widgets.length; ++i) {
 
         switch (widgets[i].dataset.widget) {
           case "facebook":
-            widgets[i].innerHTML = '<iframe src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Francho.esperanza.jiquilillo&amp;width=195&amp;height=95&amp;colorscheme=light&amp;show_faces=false&amp;header=true&amp;stream=true&amp;show_border=true" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:195px; height:95px;" allowTransparency="true"></iframe>';
+            widgets[i].innerHTML = '<iframe src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Francho.esperanza.jiquilillo&amp;width=195&amp;height=95&amp;colorscheme=light&amp;show_faces=false&amp;header=true&amp;stream=true&amp;show_border=true" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:195px; height:95px;"></iframe>';
             break;
           case "gmaps":
             if (900 < window.screen.width) {
@@ -26,6 +32,11 @@
             head.appendChild(fr);
             break;
          }
+      }
+
+      // process widows
+      for (var c = 0; c < widows.length; ++c) {
+        widows[c].innerHTML = widows[c].innerHTML.replace(/\s([^\s<]{0,10})\s*$/,'&nbsp;$1');
       }
 
     }, false);

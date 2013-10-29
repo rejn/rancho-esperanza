@@ -3,9 +3,18 @@ layout: default.hbs
 lang: "en"
 ---
 <header class="banner" id="banner" role="banner">
-  <a class="banner__logo" href="./"><img alt="Rancho Esperanza" height="185" src="assets/images/logo.png" width="180"></a>
-  <a class="banner__lang-selector icon icon--bubbles" href="index-es.html">En Español</a>
-  <a class="banner__menu icon icon--menu" href="#navigation">Menu</a>
+  {{#is id "home"}}
+  <img class="banner__logo" alt="Rancho Esperanza" height="170" src="assets/images/common-logo.png" width="179">
+  <div class="banner__tagline">
+    <p class="banner__tagline-inner">Jiquilillo&rsquo;s hostel with a conscience, where you can do a lot or a little and still make&nbsp;a&nbsp;difference</p>
+  </div>
+  {{/is}}
+  <div class="banner__nav">
+    <div class="banner__nav-inner">
+      <a class="banner__lang-selector icon icon--language" href="index-es.html">En Español</a>
+      <a class="banner__menu icon icon--menu" href="#navigation">Menu</a>
+    </div>
+  </div>
 </header>
 
 <div class="main" role="main">
@@ -23,7 +32,7 @@ lang: "en"
     <li class="navigation__item{{#is id "projects"}} is-active{{/is}}">
       <a class="navigation__item-inner" href="community-projects.html">Community&nbsp;Projects</a>
     </li>
-    <li class="navigation__item{{#is id "volunteer"}} is-active{{/is}}">
+    <li class="navigation__item navigation__item--middle navigation__item--end{{#is id "volunteer"}} is-active{{/is}}">
       <a class="navigation__item-inner" href="volunteer-opportunities.html">Volunteer&nbsp;Opportunities</a>
     </li>
     <li class="navigation__item{{#is id "prices"}} is-active{{/is}}">
@@ -32,7 +41,7 @@ lang: "en"
     <li class="navigation__item{{#is id "activities"}} is-active{{/is}}">
       <a class="navigation__item-inner" href="activities-and-excursions.html">Activities&nbsp;&amp;&nbsp;Excursions</a>
     </li>
-    <li class="navigation__item{{#is id "find"}} is-active{{/is}}">
+    <li class="navigation__item navigation__item--end{{#is id "find"}} is-active{{/is}}">
       <a class="navigation__item-inner" href="finding-us.html">Finding&nbsp;Us</a>
     </li>
   </ul>
@@ -44,8 +53,9 @@ lang: "en"
   <div class="contentinfo__inner">
     <ul class="contentinfo__external">
       <li class="contentinfo__external-item contentinfo__external-item--facebook" data-widget="facebook"><a href="https://www.facebook.com/rancho.esperanza.jiquilillo">Find us on Facebook</a></li>
-      <li class="contentinfo__external-item contentinfo__external-item--tripadvisor"><a href="http://www.tripadvisor.co.uk/Hotel_Review-g2167866-d1646502-Reviews-Rancho_Esperanza-Jiquilillo_Chinandega_Department.html"><img alt="Tripadvisor" height="213" src="assets/images/tripadvisor.png" width="152"></a></li>
+      <li class="contentinfo__external-item contentinfo__external-item--tripadvisor"><a href="http://www.tripadvisor.co.uk/Hotel_Review-g2167866-d1646502-Reviews-Rancho_Esperanza-Jiquilillo_Chinandega_Department.html"><img alt="Tripadvisor" height="213" src="assets/images/common-tripadvisor.png" width="152"></a></li>
     </ul>
-    <p>This website, like everything at Rancho Esperanza, was a team effort. We'd like to thank <a href="made-by.html">everyone</a> who helped. The rancho is <a href="for-sale.html">for sale</a>.</p>
+    <p class="contentinfo__made-by">This website, like everything at Rancho Esperanza, was a team effort. We'd like to thank <a href="made-by.html">everyone</a> who helped.</p>
+    <p>The rancho is <a href="for-sale.html">for sale</a>.</p>
   </div>
 </footer>
