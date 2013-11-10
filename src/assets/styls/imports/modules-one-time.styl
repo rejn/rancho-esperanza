@@ -1,49 +1,48 @@
 /* =banner */
 .banner {
-  font-size: 0.875em;
-  margin: 0 0 1em 0;
+  margin: 0;
   text-align: center;
-  padding-top: 1em;
+  padding-top: 2.5em;
   @media mq-medium {
-    padding-top: 7.5em;
+    padding-top: 7.3em;
   }
   @media mq-wide {
-    padding-top: 5em;
+    padding-top: 4.8em;
   }
+}
+
+.banner__branding {
+  background: white;
+  margin: 0 auto;
+  max-width: 50em;
+  padding: 0 5%;
 }
 
 .banner__logo {
-  margin: 3em 0 1em 0;
+  margin: 2em 0 1em 0;
 }
 
 .banner__tagline {
-
-  padding: 0 5%;
-  max-width: 74em;
-  margin: 0 auto;
-}
-
-.banner__tagline-inner {
-  font-size: 20px;
+  font-size: 1.250em;
   font-family: font-family-paprika;
   margin: 0;
   @media mq-medium {
-    font-size: 28px;
+    font-size: 1.500em;
   }
   @media mq-wide {
-    font-size: 36px;
+    font-size: 1.750em;
   }
 }
 
 .banner__nav {
   background: green-dark;
-  min-height: 2.65em;
-  position: absolute;
-  top: 0;
   left: 0;
-  width: 100%;
   line-height: 19px;
+  min-height: 2.5em;
+  position: absolute;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  top: 0;
+  width: 100%;
   .old-ie & {
     *height: 2.65em;
   }
@@ -51,13 +50,14 @@
 
 .banner__nav-inner {
   @media mq-medium {
-    max-width: 76.7em;
+    max-width: 66em;
     margin: 0 auto 2em auto;
     position: relative;
   }
 }
 
 .banner__menu {
+  font-size: 0.875em;
   position: absolute;
   right: 5%;
   top: 0;
@@ -73,6 +73,7 @@
 }
 
 .banner__lang-selector {
+  font-size: 0.875em;
   border-bottom-style: none;
   color: white;
   left: 5%;
@@ -98,11 +99,17 @@
   @media mq-medium {
     padding-top: 2em;
   }
+  .banner__nav {
+    @media mq-medium {
+      box-shadow: 0 .25em 0 rgba(0, 0, 0, 0.2);
+    }
+  }
 }
 
 
 /* ==banner--campaign */
 .banner--campaign {
+  padding-top: 0;
   @media mq-medium {
     margin-bottom: 0;
   }
@@ -112,8 +119,9 @@
 
 /* =main */
 .main {
+  background: white;
   margin: 0 auto;
-  max-width: 46em;
+  max-width: 50em;
   padding: 1em 5%;
   position: relative;
   @media mq-medium {
@@ -139,8 +147,11 @@
     position: absolute;
     text-align: center;
     top: 2.80em;
+    top: 2.60em;
     width: 100%;
     border-bottom: 1px solid darken(green, 10%);
+    border-top: 1px solid white;
+    box-shadow: 0 .25em 0 rgba(0, 0, 0, 0.2);
   }
 }
 
@@ -259,7 +270,7 @@
 
   padding: 0.75em 0;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
-  border-top: 2px solid white;
+  border-top: 1px solid white;
   @media mq-medium {
     width: 100%;
     padding: 0.65em 0 0 0;
@@ -276,9 +287,8 @@
   padding: 0;
   margin: 0 5%;
   clear: fix;
-
   @media mq-wide {
-    max-width: 65.8em;
+    max-width: 64.5em;
     text-align: right;
     margin: 0 auto;
     padding: 0;
@@ -329,22 +339,20 @@
   background: grey-lightest;
   border-top: 1px solid #f4f4f4;
   text-align: center;
-  padding-top: 2em;
-  font-size: 13px;
   text-shadow: 0 1px 0 #fff;
-  @media mq-medium {
-    margin-top: 3em;
-  }
+  max-width: 50em;
+  padding: 1em 5% 0 5%;
+  margin: 0 auto;
 }
 
 .contentinfo__inner {
-  padding: 2em 5% 1em 5%;
+  padding: 2em 0 1em 0;
 }
 
 .contentinfo__external {
   clear: fix;
   padding: 0;
-  max-width: 46em;
+  max-width: 36em;
   margin: 0 auto 1em auto;
 }
 
@@ -357,12 +365,13 @@
 
 .contentinfo__external-item--facebook {
   background: white;
+  font-size: 0.813em;
   height: 95px;
-  overflow:hidden;
-  width: 195px;
+  line-height: 100px;
   margin-left: auto;
   margin-right: auto;
-  line-height: 100px;
+  overflow:hidden;
+  width: 195px;
   @media screen and (min-width: 28em) {
     float: left;
     width: 195px;
@@ -376,6 +385,10 @@
   }
 }
 
-.contentinfo__made-by {
+.contentinfo__body {
+  font-size: 0.750em;
+}
+
+.contentinfo__body--made-by {
   margin-bottom: 1em;
 }

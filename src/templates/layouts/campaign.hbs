@@ -2,10 +2,14 @@
 layout: default.hbs
 lang: "en"
 ---
+
 <header class="banner banner--campaign" id="banner" role="banner">
-  <a class="banner__logo" href="./"><img alt="Rancho Esperanza" height="185" src="assets/images/logo.png" width="180"></a>
+  <div class="banner__branding">
+    <img class="banner__logo" alt="Rancho Esperanza" height="170" src="assets/images/common-logo.png" width="179">
+    <p class="banner__tagline">Thank you for staying with us. You can contribute further by...</p>
+  </div>
 </header>
 
-<div role="main">
+<div class="main" role="main">
   {{> body }}
 </div>

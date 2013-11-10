@@ -1,11 +1,16 @@
 /* =call-to-action */
 .call-to-action {
+  font-size: 0.875em;
   border: 1px dotted green-dark;
   border-width: 1px 0;
   clear: both;
-  margin: 4em 0 2em 0;
-  padding: 3em 0 1em 0;
+  margin: 3em 0 3em 0;
+  padding: 3em 1em 1em 1em;
   text-align: center;
+  @media mq-medium {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
 }
 
 .call-to-action__items {
@@ -135,4 +140,9 @@
     float: right;
     margin-left: 2em;
   }
+}
+
+/* =widget */
+.widget {
+  margin-bottom: 2em;
 }

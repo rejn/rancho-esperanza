@@ -15,6 +15,10 @@ body {
     position: relative;
     width: 605px;
   }
+  @media mq-medium {
+    background: white url("../images/common-bg.jpg") top center repeat;
+    /*background-size: cover;*/
+  }
 }
 
 
@@ -112,7 +116,6 @@ ol {
 
 /* ==table */
 table {
-  border-collapse: collapse;
   border-spacing: 0;
   margin-bottom: 2em;
   width: 100%;
@@ -125,10 +128,17 @@ caption {
 
 th,
 td {
-  font-size: 14px;
-  padding-right: 0.5em;
+  border-bottom: 1px solid grey-lighter;
+  font-size: 0.875em;
+  padding: 0.5em;
   text-align: left;
   vertical-align: top;
+}
+
+tr:last-child {
+  td {
+    border-bottom-width: 0;
+  }
 }
 
 

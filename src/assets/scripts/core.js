@@ -3,15 +3,28 @@
   /* global Modernizr */
   'use strict';
 
+  // mustard cut?
   if ('querySelector' in document &&
       'addEventListener' in window &&
       Modernizr.dataset) {
 
+    // on dom ready
+    window.addEventListener('DOMContentLoaded', function() {
+
+      // get node lists
+      var widows = document.querySelectorAll('p, a, [data-widow]');
+
+      // process widows
+      for (var c = 0; c < widows.length; ++c) {
+        widows[c].innerHTML = widows[c].innerHTML.replace(/\s([^\s<]{0,10})\s*$/,'&nbsp;$1');
+      }
+    }, false);
+
+    // on page load
     window.addEventListener('load', function() {
 
       // get nodelists
       var widgets = document.querySelectorAll('[data-widget]'),
-        widows = document.querySelectorAll('p, a, [data-widow]'),
         head = document.querySelector('head');
 
       // process widgets
@@ -33,14 +46,6 @@
             break;
          }
       }
-
-      // process widows
-      for (var c = 0; c < widows.length; ++c) {
-        widows[c].innerHTML = widows[c].innerHTML.replace(/\s([^\s<]{0,10})\s*$/,'&nbsp;$1');
-      }
-
     }, false);
-
   }
-
 }(this, this.document));
