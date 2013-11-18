@@ -2,10 +2,11 @@
 layout: default.hbs
 lang: "en"
 ---
+
 <header class="banner" id="banner" role="banner">
   {{#is id "home"}}
   <div class="banner__branding">
-    <img class="banner__logo" alt="Rancho Esperanza" height="170" src="assets/images/common-logo.png" width="179">
+    <img class="banner__logo" alt="Rancho Esperanza" height="200" src="assets/images/common-logo.png" width="200">
     <p class="banner__tagline">Jiquilillo&rsquo;s hostel with a conscience, where you can do a lot or a little and still make&nbsp;a&nbsp;difference</p>
   </div>
   {{/is}}
@@ -27,22 +28,22 @@ lang: "en"
       <a class="navigation__item-inner" href="./">Home</a>
     </li>
     <li class="navigation__item{{#is id "about"}} is-active{{/is}}">
-      <a class="navigation__item-inner" href="about-jiquilillo.html">About&nbsp;Jiquilillo</a>
+      <a class="navigation__item-inner" href="about-jiquilillo.html">About<span class="navigation__item-extra navigation__item-extra--about">&nbsp;Jiquilillo</span></a>
     </li>
     <li class="navigation__item{{#is id "projects"}} is-active{{/is}}">
-      <a class="navigation__item-inner" href="community-projects.html">Community&nbsp;Projects</a>
+      <a class="navigation__item-inner" href="community-projects.html"><span class="navigation__item-extra navigation__item-extra--projects">Community&nbsp;</span>Projects</a>
     </li>
-    <li class="navigation__item navigation__item--middle navigation__item--end{{#is id "volunteer"}} is-active{{/is}}">
-      <a class="navigation__item-inner" href="volunteer-opportunities.html">Volunteer&nbsp;Opportunities</a>
+    <li class="navigation__item{{#is id "volunteer"}} is-active{{/is}}">
+      <a class="navigation__item-inner" href="volunteer-opportunities.html">Volunteer<span class="navigation__item-extra navigation__item-extra--volunteer">&nbsp;Opportunities</span></a>
     </li>
     <li class="navigation__item{{#is id "prices"}} is-active{{/is}}">
-      <a class="navigation__item-inner" href="accommodation-and-food.html">Accommodation&nbsp;&amp;&nbsp;Food</a>
+      <a class="navigation__item-inner" href="accommodation-and-food.html">Accommodation &amp; Food</a>
     </li>
     <li class="navigation__item{{#is id "activities"}} is-active{{/is}}">
-      <a class="navigation__item-inner" href="activities-and-excursions.html">Activities&nbsp;&amp;&nbsp;Excursions</a>
+      <a class="navigation__item-inner" href="activities-and-excursions.html">Activities<span class="navigation__item-extra navigation__item-extra--activities">&nbsp;&amp; Excursions</span></a>
     </li>
     <li class="navigation__item navigation__item--end{{#is id "find"}} is-active{{/is}}">
-      <a class="navigation__item-inner" href="finding-us.html">Finding&nbsp;Us</a>
+      <a class="navigation__item-inner" href="finding-us.html">Finding Us</a>
     </li>
   </ul>
 </nav>

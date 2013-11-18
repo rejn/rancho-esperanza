@@ -3,21 +3,24 @@ html {
 }
 
 body {
-  background: white;
+  background: white url("../images/common-bg.jpg") center top repeat;
   color: black;
   font-family: font-family-bitter;
   font-size: 1em;
   line-height: 1.6;
   margin: 0;
+  padding: 0 0.25em;
   .old-ie & {
     margin: auto;
     padding: 0 15px;
     position: relative;
-    width: 605px;
+    width: 800px;
+  }
+  @media mq-narrow {
+    padding: 0 1em;
   }
   @media mq-medium {
-    background: white url("../images/common-bg.jpg") top center repeat;
-    /*background-size: cover;*/
+    padding: 0 2em;
   }
 }
 
@@ -48,14 +51,14 @@ h3 {
   font-family: Paprika, cursive;
   font-weight: normal;
   line-height: 1.4;
-  padding: 0 0.5em 0.75em 0.5em;
   margin-bottom: 1em;
+  padding: 0 0.5em 0.75em 0.5em;
   text-align: center;
 }
 
 h1 {
   background: url('../images/common-swiggle.svg') no-repeat bottom center;
-  font-size: 30px;
+  font-size: 1.875em;
   @media mq-medium {
     font-size: 2.375em;
   }
@@ -128,7 +131,7 @@ caption {
 
 th,
 td {
-  border-bottom: 1px solid grey-lighter;
+  border-bottom: 0.071em solid grey-lighter;
   font-size: 0.875em;
   padding: 0.5em;
   text-align: left;
@@ -150,33 +153,21 @@ img {
   max-width: 100%;
   vertical-align: middle;
   .old-ie & {
-    interpolation-mode: bicubic;
+    ms-interpolation-mode: bicubic;
   }
 }
 
 figure {
   clear: both;
-  display: table;
-  margin: 1em auto 2em auto;
+  margin: 0.5em auto 2em auto;
   max-width: 100%;
   text-align: center;
-  img {
-    display: table-cell;
-    width: 100%;
-    .old-ie & {
-      display: block;
-      width: auto;
-    }
-  }
 }
 
 figcaption {
-  caption-side: bottom;
   color: grey;
-  display: table-caption;
   font-size: 0.813em;
   font-style: italic;
-  max-width: 100%;
   padding: 1em 3% 0 3%;
   text-align: center;
 }

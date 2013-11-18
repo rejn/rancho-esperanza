@@ -15,7 +15,7 @@ module.exports = function(grunt) {
     // read package
     pkg: grunt.file.readJSON('package.json'),
 
-    // tasks
+    // configure tasks
     assemble: {
       options: {
         assets: '<%= settings.dist %>/assets',
