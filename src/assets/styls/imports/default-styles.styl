@@ -58,7 +58,10 @@ h3 {
 
 h1 {
   background: url('../images/common-swiggle.svg') no-repeat bottom center;
-  font-size: 1.875em;
+  font-size: 1.625em;
+  @media mq-narrow {
+    font-size: 1.875em;
+  }
   @media mq-medium {
     font-size: 2.375em;
   }
@@ -66,16 +69,22 @@ h1 {
 
 h2 {
   background: url('../images/common-wave.svg') no-repeat bottom center;
-  font-size: 1.5em;
+  font-size: 1.375em;
   padding-top: 1em;
+  @media mq-narrow {
+    font-size: 1.5em;
+  }
   @media mq-medium {
     font-size: 2em;
   }
 }
 
 h3 {
-  font-size: 1.25em;
+  font-size: 1em;
   padding-top: 1em;
+  @media mq-narrow {
+    font-size: 1.25em;
+  }
   @media mq-medium {
     font-size: 1.5em;
   }
@@ -115,6 +124,7 @@ ul,
 ol {
   margin: 0 0 2em 0;
 }
+
 
 
 /* ==table */
