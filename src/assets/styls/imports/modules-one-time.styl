@@ -362,18 +362,21 @@
 .contentinfo__external {
   clear: fix;
   margin: 0 auto 1em auto;
-  max-width: 36em;
   padding: 0;
 }
 
 .contentinfo__external-item {
   display: block;
   list-style: none;
-  margin: 0 0 2em 0;
+  margin: 0 0 1em 0;
   padding: 0;
+  @media mq-narrow {
+    float: left;
+    width: 50%;
+  }
 }
 
-.contentinfo__external-item--facebook {
+.contentinfo__facebook {
   background: white;
   font-size: 0.813em;
   height: 95px;
@@ -382,16 +385,8 @@
   margin-right: auto;
   overflow: hidden;
   width: 195px;
-  @media screen and (min-width: 28em) {
-    float: left;
-    width: 195px;
-  }
-}
-
-.contentinfo__external-item--tripadvisor {
-  @media screen and (min-width: 28em) {
-    float: right;
-    width: 152px;
+  @media mq-narrow {
+    margin-top: 15px;
   }
 }
 
