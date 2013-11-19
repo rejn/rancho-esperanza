@@ -127,7 +127,7 @@ module.exports = function(grunt) {
     },
     ftpscript: {
       options: {
-        host: 'ftp.richardhallows.com',
+        host: 'ftp.rancho-esperanza.com',
         passive: false
       },
       all: {
@@ -139,7 +139,7 @@ module.exports = function(grunt) {
               '**',
               '**/.*'
             ],
-            dest: '/httpdocs/'
+            dest: '/public_html/'
           }
         ]
       },
@@ -153,7 +153,7 @@ module.exports = function(grunt) {
               '**/.*',
               '!assets/**'
             ],
-            dest: '/httpdocs/'
+            dest: '/public_html/'
           }
         ]
       }
