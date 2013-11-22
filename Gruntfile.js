@@ -150,7 +150,6 @@ module.exports = function(grunt) {
             cwd: '<%= settings.dist %>',
             src: [
               '**',
-              '**/.*',
               '!assets/**'
             ],
             dest: '/public_html/'
