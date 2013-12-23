@@ -143,6 +143,17 @@ module.exports = function(grunt) {
           }
         ]
       },
+      html: {
+        files: [
+          {
+            expand: true,
+            cwd: '<%= settings.dist %>',
+            filter: 'isFile',
+            src: ['**/*.html'],
+            dest: '/public_html/'
+          }
+        ]
+      },
       withoutAssets: {
         files: [
           {
@@ -315,7 +326,7 @@ module.exports = function(grunt) {
   grunt.registerTask('deploy',
     [
       'build',
-      'ftpscript:withoutAssets'
+      'ftpscript:html'
     ]
   );
 
