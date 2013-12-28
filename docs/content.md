@@ -31,7 +31,7 @@ But the secret of good writing is to strip every sentence to its cleanest compon
 >
 > -- <cite>[William Zinsser](http://www.amazon.com/dp/B0090RVGW0/ref=as_li_ss_til?tag=leavethegreat-20)
 
-Use simple language to reveal our personalities and avoid navel-gazing:
+Use simple language to reveal our personalities and passive sentences:
 
 > We source the majority of our produce and food locally
 
