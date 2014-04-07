@@ -8,36 +8,6 @@
   }
 }
 
-.banner__branding {
-  background: white;
-  border: 0 solid green;
-  border-width: 0 0.125em;
-  margin: 0 auto;
-  max-width: 46em;
-  padding: 0 5%;
-  @media mq-medium {
-    border-width: 0 0.25em;
-  }
-}
-
-.banner__logo {
-  height: 200px;
-  margin: 2em 0 1em 0;
-  width: 200px;
-}
-
-.banner__tagline {
-  font-family: font-family-paprika;
-  font-size: 1.125em;
-  margin: 0;
-  @media mq-medium {
-    font-size: 1.500em;
-  }
-  @media mq-widest {
-    font-size: 1.750em;
-  }
-}
-
 .banner__nav {
   background: green-darker;
   box-shadow: 0 0.25em 0 rgba(0, 0, 0, 0.2);
@@ -99,6 +69,44 @@
   }
 }
 
+.banner__alert {
+ /*position: absolute;
+  top: 0;
+  left: 0;
+  background: black;
+  color: white;*/
+  color: #fff;
+background-color: #ed9c28;
+
+
+
+border: 0 solid green;
+  border-width: 0 0.125em;
+text-shadow: 0.063em 0.063em 0.125em rgba(0, 0, 0, 0.4);
+  margin: 0 auto;
+  max-width: 55em;
+  //padding: 0 5%;
+
+  @media mq-medium {
+    border-width: 0 0.25em;
+    //border-bottom: 1px solid #d58512;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.banner__alert-inner {
+  font-size: 0.875em;
+  border-bottom: 1px solid #d58512;
+  padding: 0.75em 5% 0.5em 5%;
+  a {
+    color: white;
+    border-color: white;
+  }
+}
+
 
 /* ==banner--es */
 .banner--es {
@@ -126,10 +134,10 @@
   border: 0 solid green;
   border-width: 0 0.125em;
   margin: 0 auto;
-  max-width: 46em;
+  max-width: 55em;
   padding: 1em 5%;
-  position: relative;
-  z-index: 1;
+  //position: relative;
+  //z-index: 1;
   @media mq-medium {
     border-width: 0 0.25em;
   }
@@ -346,7 +354,7 @@
   border-width: 0 0.125em;
   color: grey;
   margin: 0 auto;
-  max-width: 46em;
+  max-width: 55em;
   padding: 1em 5% 0 5%;
   text-align: center;
   text-shadow: 0 0.063rem 0 white;

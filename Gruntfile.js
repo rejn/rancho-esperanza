@@ -298,8 +298,8 @@ module.exports = function(grunt) {
     [
       'jshint',
       'clean',
-      'imagemin',
-      'svgmin',
+      //'imagemin',
+      //'svgmin',
       'copy',
       'stylus',
       'autoprefixer',
