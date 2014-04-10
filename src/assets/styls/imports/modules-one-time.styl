@@ -168,7 +168,7 @@
   border-bottom: 0.063em solid green-darker;
   list-style: none;
   margin: 0;
-  padding: 0.25em 0;
+  padding: 0.5em 2.5%;
   text-shadow: 0.063em 0.063em 0.125em rgba(0, 0, 0, 0.4);
   &:last-child {
     border-bottom: none;
@@ -181,6 +181,7 @@
     display: inline-block;
     margin-right: 0.35em; // htmlmin issue
     padding-left: 0.1em;
+    padding: 0.25em 0 0.25em 0.1em;
     &:last-child {
       margin-right: 0;
     }
@@ -192,11 +193,15 @@
   color: white;
   display: block;
   font-size: 0.875em;
-  margin: 0 5%;
-  padding: 0.5em 0;
+  margin: 0;
+  padding: 0.125em 2.5%;
+  border-left: 4px solid green;
+  border-bottom: none;
   &:hover {
     border-bottom-color: green;
-    text-shadow: none;
+    border-left: 4px solid white;
+    border-bottom: none;
+    //text-shadow: none;
   }
   &:after {
     content: '\e600';
@@ -204,7 +209,8 @@
     font-family: font-family-icomoon;
   }
   .is-active & {
-    font-style: italic;
+    //font-style: italic;
+    border-left-color: green-darker;
     &:after {
       content: '\e605';
       font-style: normal;
@@ -215,6 +221,10 @@
     display: inline;
     margin: 0;
     padding: 0.5em 0.6em;
+    &:hover {
+      border: none;
+      border-bottom: 2px solid white;
+    }
     &:after {
       content '\00B7';
       font-family: font-family-bitter;
