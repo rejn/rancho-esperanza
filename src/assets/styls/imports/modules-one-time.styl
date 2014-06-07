@@ -375,10 +375,17 @@
   a {
     border-bottom: none !important;
   }
+  @media mq-widest {
+    float: left;
+    width: 50%;
+  }
 }
 
 .contentinfo__external-item--trip {
   padding-top: 1em;
+  @media mq-widest {
+    float: right;
+  }
 }
 
 .contentinfo__external-item-img {
@@ -402,15 +409,7 @@
 
 .contentinfo__body {
   font-size: 0.750em;
-}
-
-.contentinfo__body--made-by {
-  margin-bottom: 1em;
-}
-
-.contentinfo__body--recommendations {
-  border-bottom: 1px solid grey-lighter;
-  margin: 0 auto 3em auto;
-  max-width: 30em;
-  padding-bottom: 3em;
+  max-width: 60em;
+  margin-left: auto;
+  margin-right: auto;
 }
