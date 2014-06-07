@@ -246,10 +246,10 @@ module.exports = function(grunt) {
           livereload: true,
         },
         files: [
-          '<%= settings.dist %>/**/*.html',
-          '<%= settings.dist %>/assets/images/**/*.{png,jpg,jpeg,gif,webp,svg}',
-          '<%= settings.dist %>/assets/scripts/**/*.js',
-          '<%= settings.dist %>/assets/styles/**/*.css'
+          '<%= settings.dist %>/*.html',
+          '<%= settings.dist %>/assets/images/*.{png,jpg,jpeg,gif,webp,svg}',
+          '<%= settings.dist %>/assets/scripts/*.js',
+          '<%= settings.dist %>/assets/styles/*.css'
         ]
       },
       gruntfile: {
@@ -257,14 +257,14 @@ module.exports = function(grunt) {
         tasks: ['jshint:gruntfile']
       },
       imagesRaster: {
-        files: ['<%= settings.src %>/assets/images/**/*.{jpg,png}'],
+        files: ['<%= settings.src %>/assets/images/*.{jpg,png}'],
         tasks: [
           'newer:imagemin',
           'newer:copy:images'
         ]
       },
       imagesVector: {
-        files: ['<%= settings.src %>/assets/images/**/*.svg'],
+        files: ['<%= settings.src %>/assets/images/*.svg'],
         tasks: [
           'newer:svgmin',
           'newer:copy:images'
