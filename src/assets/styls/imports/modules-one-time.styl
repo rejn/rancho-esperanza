@@ -196,17 +196,14 @@
   margin: 0;
   padding: 0.125em 2.5%;
   border-left: 4px solid green;
-  border-bottom: none;
-  &:hover {
-    border-bottom-color: green;
-    border-left: 4px solid white;
-    border-bottom: none;
-    //text-shadow: none;
-  }
+  border-bottom-width: 0;
   &:after {
     content: '\e600';
     float: right;
     font-family: font-family-icomoon;
+  }
+  &:hover {
+    border-left-color: green-darker;
   }
   .is-active & {
     //font-style: italic;
@@ -217,19 +214,16 @@
     }
   }
   @media mq-wide {
-    border: none;
+    border-width: 0;
     display: inline;
     margin: 0;
     padding: 0.5em 0.6em;
-    &:hover {
-      border: none;
-      border-bottom: 2px solid white;
-    }
     &:after {
       content '\00B7';
       font-family: font-family-bitter;
       padding-left: 0.25em;
     }
+    &:hover,
     .is-active & {
       background: green-darker;
       font-style: normal;
