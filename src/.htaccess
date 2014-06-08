@@ -10,6 +10,7 @@ redirect 301 /mission-and-projects.html /community-projects.html
 redirect 301 /surf-camp-and-club.html /activities-and-excursions.html
 redirect 301 /excursions-and-activities.html /activities-and-excursions.html
 redirect 301 /about-us.html /community-projects.html
+redirect 301 /community-projects.html /community-projects.html
 redirect 301 /community.html /about-jiquilillo.html
 redirect 301 /accommodation-and-prices.html /accommodation-and-food.html
 
