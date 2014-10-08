@@ -139,7 +139,7 @@ module.exports = function(grunt) {
               '**',
               '**/.*'
             ],
-            dest: '/public_html/'
+            dest: '/'
           }
         ]
       },
@@ -150,7 +150,7 @@ module.exports = function(grunt) {
             cwd: '<%= settings.dist %>',
             filter: 'isFile',
             src: ['**/*.html'],
-            dest: '/public_html/'
+            dest: '/'
           }
         ]
       },
@@ -163,7 +163,7 @@ module.exports = function(grunt) {
               '**',
               '!assets/**'
             ],
-            dest: '/public_html/'
+            dest: '/'
           }
         ]
       }
