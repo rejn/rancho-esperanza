@@ -1,12 +1,14 @@
----
-id: prices
-title: "Accommodation & Food"
-description: "We offers cabins, camping, dormitories, restaurant, and bar in Nicaragua"
----
+{% extends "./templates/layouts/en.html" %}
+
+{% set id = "prices" %}
+{% set title = "Accommodation & Food" %}
+{% set description = "We offers cabins, camping, dormitories, restaurant, and bar in Nicaragua" %}
+
+{% block main %}
 
 <h1>Accommodation &amp; Food</h1>
 
-<!--
+{#
 <div class="alert" id="semana-santa">
 
   <h2>Holy Week (Semana Santa)<br>April 16th-19th</h2>
@@ -48,7 +50,7 @@ description: "We offers cabins, camping, dormitories, restaurant, and bar in Nic
   <p>For more information or to make a reservation, please call <a class="icon icon--inline icon--phone nowrap" href="tel:88791795">8879-1795</a></p>
 
 </div>
--->
+#}
 
 <p>We are reducing our hostel and restaurant footprint by composting toilet and kitchen waste, being mindful of our water usage, recycling the water we do use via our grey-water system, and maximizing the use of local and natural materials in our buildings.</p>
 
@@ -173,7 +175,7 @@ description: "We offers cabins, camping, dormitories, restaurant, and bar in Nic
 <p>We also cater, and give discounts, to groups and private events. Please inquire for more details.</p>
 
 <div class="call-to-action">
-  {{> call-to-action }}
+  {% include "./templates/partials/call-to-action.html" %}
 </div>
 
 <h2>Eating</h2>
@@ -272,9 +274,13 @@ description: "We offers cabins, camping, dormitories, restaurant, and bar in Nic
 <p>We accept c&oacute;rdobas, crisp dollar bills ($50 bills or smaller), and MasterCard &amp; VISA (with a 7% surcharge).  There are <strong>no ATMs or banks</strong> in Jiquilillo, the nearest ATM is in Chinandega. There can be a 2% discrepancy in all listed prices due to fluctuations in the exchange rate.</p>
 
 <aside class="call-to-action">
-  {{> call-to-action }}
-  <ul class="call-to-action__items l-columns">
+  {% include "./templates/partials/call-to-action.html" %}
+
+</aside>
+
+<ul class="call-to-action__items l-columns">
     <li class="call-to-action__item l-columns__primary"><a class="call-to-action__item-inner" href="activities-and-excursions.html">Find out about the activities and excursions we offer</a></li>
     <li class="call-to-action__item l-columns__secondary"><a class="call-to-action__item-inner" href="finding-us.html">Get directions to the rancho from Chinandega, Leon, and Managua</a>
   </ul>
-</aside>
+
+{% endblock %}

@@ -9,7 +9,9 @@
   },
   "devDependencies": {
     "assemble": "~0.4.37",
+    "browser-sync": "^1.6.3",
     "grunt": "~0.4.4",
+    "grunt-autoprefixer": "~0.7.2",
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-connect": "~0.7.1",
     "grunt-contrib-copy": "~0.5.0",
@@ -20,10 +22,14 @@
     "grunt-contrib-stylus": "~0.13.2",
     "grunt-contrib-uglify": "~0.4.0",
     "grunt-contrib-watch": "~0.6.1",
-    "grunt-autoprefixer": "~0.7.2",
     "grunt-ftpscript": "~0.1.7",
     "grunt-newer": "~0.7.0",
     "grunt-svgmin": "~0.4.0",
-    "load-grunt-tasks": "~0.4.0"
+    "gulp": "^3.8.10",
+    "gulp-swig": "^0.7.4",
+    "gulp-typogr": "^1.0.0",
+    "load-grunt-tasks": "~0.4.0",
+    "require-dir": "^0.1.0",
+    "typogr": "^0.6.4"
   }
 }

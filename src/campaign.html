@@ -1,8 +1,9 @@
----
-title: "Rancho Esperanza - Campaign"
-description: ""
-layout: campaign.hbs
----
+{% extends "./templates/layouts/campaign.html" %}
+
+{% set title = "Rancho Esperanza - Campaign" %}
+{% set description = "Support us" %}
+
+{% block main %}
 
 <div class="lead">
   <h1 class="lead__title"><img class="lead__logo" alt="Rancho Esperanza" height="200" src="assets/images/common-logo.png" width="200"></h1>
@@ -26,3 +27,5 @@ layout: campaign.hbs
     <p><em>Do you have more than a moment?</em> A positive review on <a href="http://www.tripadvisor.com/Hotel_Review-g1233814-d1646502-Reviews-Rancho_Esperanza-Chinandega_Province.html">Trip Advisor</a> is very helpful and much appreciated.</p>
   </div>
 </div>
+
+{% endblock %}

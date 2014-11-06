@@ -1,7 +1,6 @@
----
-layout: default.hbs
-lang: "es"
----
+{% extends "base.html" %}
+
+{% block body %}
 
 <header class="banner banner--es" id="banner" role="banner">
   <div class="banner__nav">
@@ -9,15 +8,17 @@ lang: "es"
       <a class="banner__lang-selector icon icon--language" href="index.html">English site</a>
     </div>
   </div>
-  <!--<div class="banner__alert">
+  {#<div class="banner__alert">
     <div class="banner__alert-inner">
       Estamos cerrados actualmente, debido al clima severo.
     </div>
-  </div>-->
+  </div>#}
 </header>
 
 <div class="main" role="main">
-  {{> body }}
+  {% block main %}{% endblock %}
 </div>
 
-{{> complementary}}
+{% include "../partials/complementary.html" %}
+
+{% endblock %}

@@ -1,7 +1,6 @@
----
-layout: default.hbs
-lang: "en"
----
+{% extends "base.html" %}
+
+{% block body %}
 
 <header class="banner" id="banner" role="banner">
   <div class="banner__nav">
@@ -10,44 +9,43 @@ lang: "en"
       <a class="banner__menu icon icon--menu" href="#navigation">Menu</a>
     </div>
   </div>
-  <!--<div class="banner__alert">
+  {#
+  <div class="banner__alert">
     <div class="banner__alert-inner">
        We are currently <strong>closed</strong> due to severe weather across Nicaragua. Please contact us for a reopen date.
     </div>
-  </div>-->
+  </div>
+  #}
 </header>
 
 <div class="main" role="main">
-  {{> body }}
+  {% block main %}{% endblock %}
 </div>
 
 <nav class="navigation" id="navigation" role="navigation">
   <ul class="navigation__inner">
-    <li class="navigation__item{{#is id "home"}} is-active{{/is}}">
+    <li class="navigation__item{% if id == 'home' %} is-active{% endif %}">
       <a class="navigation__item-inner" href="./">Home</a>
     </li>
-    <li class="navigation__item{{#is id "about"}} is-active{{/is}}">
+    <li class="navigation__item{% if id == 'about' %} is-active{% endif %}">
       <a class="navigation__item-inner" href="about-jiquilillo.html">About<span class="navigation__item-extra navigation__item-extra--about">&nbsp;Jiquilillo</span></a>
     </li>
-    <li class="navigation__item{{#is id "projects"}} is-active{{/is}}">
+    <li class="navigation__item{% if id == 'projects'%} is-active{% endif %}">
       <a class="navigation__item-inner" href="community-projects.html">Projects &amp; Volunteering</a>
     </li>
-    <!--<li class="navigation__item{{#is id "volunteer"}} is-active{{/is}}">
-      <a class="navigation__item-inner" href="community-projects.html">Volunteer<span class="navigation__item-extra navigation__item-extra--volunteer">&nbsp;Opportunities</span></a>
-    </li>-->
-    <li class="navigation__item{{#is id "prices"}} is-active{{/is}}">
+    <li class="navigation__item{% if id == 'prices'%} is-active{% endif %}">
       <a class="navigation__item-inner" href="accommodation-and-food.html">Accommodation &amp; Food</a>
     </li>
-    <li class="navigation__item{{#is id "activities"}} is-active{{/is}}">
+    <li class="navigation__item{% if id == 'activities'%} is-active{% endif %}">
       <a class="navigation__item-inner" href="activities-and-excursions.html">Activities<span class="navigation__item-extra navigation__item-extra--activities">&nbsp;&amp; Excursions</span></a>
     </li>
-    <li class="navigation__item navigation__item--end{{#is id "find"}} is-active{{/is}}">
+    <li class="navigation__item navigation__item--end{% if id == 'find'%} is-active{% endif %}">
       <a class="navigation__item-inner" href="finding-us.html">Finding Us</a>
     </li>
   </ul>
 </nav>
 
-{{> complementary}}
+{% include "../partials/complementary.html" %}
 
 <footer class="contentinfo" role="contentinfo">
   <div class="contentinfo__inner">
@@ -71,3 +69,5 @@ lang: "en"
     <p class="contentinfo__body">Lastly, this website, like almost everything here, was a team effort and we&rsquo;d like to <a href="made-by.html">thank everyone</a> who helped.</p>
   </div>
 </footer>
+
+{% endblock %}

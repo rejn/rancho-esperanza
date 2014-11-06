@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<!--[if lt IE 9]><html lang="{{ lang }}" class="no-js old-ie"><![endif]-->
-<!--[if gt IE 8]><!--><html lang="{{ lang }}" class="no-js"><!--<![endif]-->
+{#[if lt IE 9]><html lang="{{ lang }}" class="no-js old-ie"><![endif]#}
+{#[if gt IE 8]>{#><html lang="{{ lang }}" class="no-js">{#<![endif]#}
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
     <meta name="description" content="{{ description }}">
-    <link href="{{ assets }}/styles/core.css?v=7" rel="stylesheet">
-    <script src="{{ assets }}/vendor/modernizr/modernizr.js"></script>
+    <link href="./styles/core.css?v=7" rel="stylesheet">
+    <script src="./vendor/modernizr/modernizr.js"></script>
   </head>
 
   <body>
-    {{> body }}
-    <script src="{{ assets }}/scripts/core.js"></script>
-    {{#prod}}
+    {% block body %}{% endblock %}
+    <script src="./scripts/core.js"></script>
+    {#
       <script>
         var _gaq=[['_setAccount','UA-11848325-3'],['_trackPageview']];
         (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
         g.src='//www.google-analytics.com/ga.js';
         s.parentNode.insertBefore(g,s)}(document,'script'));
       </script>
-    {{/prod}}
+    #}
   </body>
 </html>

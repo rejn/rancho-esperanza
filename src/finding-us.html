@@ -1,8 +1,10 @@
----
-id: find
-title: "Finding us"
-description: "Directions to Rancho Esperanza in Jiquilillo from Chinandega, Leon, Managua and El Salvador."
----
+{% extends "./templates/layouts/en.html" %}
+
+{% set id = "find" %}
+{% set title = "Finding us" %}
+{% set description = "Directions to Rancho Esperanza in Jiquilillo from Chinandega, Leon, Managua and El Salvador." %}
+
+{% block main %}
 
 <h1>Finding us</h1>
 
@@ -72,5 +74,7 @@ description: "Directions to Rancho Esperanza in Jiquilillo from Chinandega, Leon
 <p data-widget="gmaps"><a href="http://goo.gl/maps/AyAox">Find us on Google Maps</a></p>
 
 <aside class="call-to-action">
-  {{> call-to-action }}
+  {% include "./templates/partials/call-to-action.html" %}
 </aside>
+
+{% endblock %}

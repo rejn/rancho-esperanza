@@ -1,8 +1,10 @@
----
-id: activities
-title: "Activities & Excursions"
-description: "We and the community offer surfing, kayaking, boats tours and community excursions like tortilla making."
----
+{% extends "./templates/layouts/en.html" %}
+
+{% set id = "activities" %}
+{% set title = "Activities & Excursions" %}
+{% set description = "We and the community offer surfing, kayaking, boats tours and community excursions like tortilla making." %}
+
+{% block main %}
 
 <h1>Activities &amp; Excursions</h1>
 
@@ -124,3 +126,5 @@ description: "We and the community offer surfing, kayaking, boats tours and comm
     </li>
   </ul>
 </aside>
+
+{% endblock %}

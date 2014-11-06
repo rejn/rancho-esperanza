@@ -1,8 +1,10 @@
----
-id: projects
-title: "Community Projects, Volunteer opportunities & volunteering in Nicaragua."
-description: "We are actively involved in the community of Jiquilillo and offer volunteering in Nicaragua."
----
+{% extends "./templates/layouts/en.html" %}
+
+{% set id = "projects" %}
+{% set title = "Community Projects, Volunteer opportunities & volunteering in Nicaragua." %}
+{% set description = "We are actively involved in the community of Jiquilillo and offer volunteering in Nicaragua." %}
+
+{% block main %}
 
 <h1>Community Projects &amp; Volunteer/Internship Opportunities</h1>
 
@@ -179,3 +181,5 @@ description: "We are actively involved in the community of Jiquilillo and offer 
     </li>
   </ul>
 </aside>
+
+{% endblock %}

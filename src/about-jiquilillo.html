@@ -1,8 +1,10 @@
----
-id: about
-title: "About Jiquilillo & The Rancho"
-description: "Jiquilillo is a small fishing community located on the northern Pacific coast of Nicaragua."
----
+{% extends "./templates/layouts/en.html" %}
+
+{% set id = "about" %}
+{% set title = "About Jiquilillo & The Rancho" %}
+{% set description = "Jiquilillo is a small fishing community located on the northern Pacific coast of Nicaragua." %}
+
+{% block main %}
 
 <h1>About Jiquilillo &amp; The Rancho</h1>
 
@@ -70,3 +72,5 @@ description: "Jiquilillo is a small fishing community located on the northern Pa
     </li>
   </ul>
 </aside>
+
+{% endblock %}

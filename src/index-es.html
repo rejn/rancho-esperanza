@@ -1,12 +1,13 @@
----
-title: "Rancho Esperanza - Hotel en Jiquilillo"
-description: "Hotel, restaurante, dormitarios, tablas de surf, trabajos voluntarios en Playa Jiquilillo, Nicaragua"
-layout: es.hbs
----
+{% extends "./templates/layouts/es.html" %}
+
+{% set title = "Rancho Esperanza - Hotel en Jiquilillo" %}
+{% set description = "Hotel, restaurante, dormitarios, tablas de surf, trabajos voluntarios en Playa Jiquilillo, Nicaragua" %}
+
+{% block main %}
 
 <div class="lead">
   <h1 class="lead__title"><img class="lead__logo" alt="Rancho Esperanza" height="200" src="assets/images/common-logo.png" width="200"></h1>
-  <p class="lead__tagline">Donde puede hacer mucho o poco y todav&iacute;a hacer una diferencia.</p>
+  <p class="lead__tagline">xDonde puede hacer mucho o poco y todav&iacute;a hacer una diferencia.</p>
 </div>
 
 <figure class="figure">
@@ -31,7 +32,7 @@ layout: es.hbs
 
 <p>Para los aventureros, nosotros y la comunidad ofrecemos lecciones de surf, kayak, subidas del Volc&aacute;n Cosig&uuml;ina, paseos en caballo por la playa, y excursiones culturales.</p>
 
-<!--
+{#
 <div class="alert" id="semana-santa">
 
   <h2>Semana Santa<br>16-19 de Abril</h2>
@@ -71,7 +72,7 @@ layout: es.hbs
   <p>Para el 20 y 21 de Abril, solamente ofrecemos alojamiento. Nuestra restaurante esta cerrado durante este tiempo y no ofrecemos servicios de toures o clases de surf. Desde el 22 de Abril y adelante, el hotel esta funcionando normalmente.</p>
 
 </div>
--->
+#}
 
 <h2>Alojamiento</h2>
 
@@ -205,3 +206,5 @@ layout: es.hbs
 <aside class="call-to-action">
   <p>Aun sin aviso previo son bienvenidos, pero agradecer&iacute;amos reservaciones con antelaci&oacute;n. Para asegurar su reservaci&oacute;n pedimos un deposito de 30% de su alojamiento. Si les gustar&iacute;a hacer una reservaci&oacute;n, ll&aacute;menos al <a class="icon icon--inline icon--phone nowrap" href="tel:+50588791795">+505 8 879 1795</a> o env&iacute;en un correo al <a class="icon icon--inline icon--email nowrap" href="mailto:stay@rancho-esperanza.com">stay@rancho-esperanza.com</a>.</p>
 </aside>
+
+{% endblock %}

@@ -1,12 +1,14 @@
----
-id: home
-title: "Rancho Esperanza - Jiquilillo's Hostel & Hotel with a Conscience"
-description: "Eco-friendly Hostel, Hotel and Surf Camp located in Jiquilillo, Northern Nicaragua."
----
+{% extends "./templates/layouts/en.html" %}
+
+{% set id = "home" %}
+{% set title = "Rancho Esperanza - Jiquilillo's Hostel & Hotel with a Conscience" %}
+{% set description = "Eco-friendly Hostel, Hotel and Surf Camp located in Jiquilillo, Northern Nicaragua." %}
+
+{% block main %}
 
 <div class="lead">
   <h1 class="lead__title"><img class="lead__logo" alt="Rancho Esperanza" height="200" src="assets/images/common-logo.png" width="200"></h1>
-  <p class="lead__tagline">Jiquilillo&rsquo;s hostel with a conscience, where you can do a lot or a little and still make&nbsp;a&nbsp;difference</p>
+  <p class="lead__tagline">Jiquilillo's hostel with a conscience, where you can do a lot or a little and still make a difference</p>
 </div>
 
 <figure class="figure">
@@ -41,6 +43,8 @@ description: "Eco-friendly Hostel, Hotel and Surf Camp located in Jiquilillo, No
 <aside class="call-to-action">
   <ul class="call-to-action__items l-columns">
     <li class="call-to-action__item l-columns__primary"><a class="call-to-action__item-inner" href="about-jiquilillo.html">Find out more about Jiquilillo and the surrounding area</a></li>
-    <li class="call-to-action__item l-columns__secondary"><a class="call-to-action__item-inner" href="accommodation-and-food.html">Find out more about the accommodation &amp; food we offer</a>
+    <li class="call-to-action__item l-columns__secondary"><a class="call-to-action__item-inner" href="accommodation-and-food.html">Find out more about the accommodation & food we offer</a>
   </ul>
 </aside>
+
+{% endblock %}
