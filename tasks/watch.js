@@ -2,12 +2,13 @@
 
 var gulp = require('gulp');
 
-gulp.task('watch', function() {
+gulp.task('watch', ['default'], function() {
 
   var browserSync = require('browser-sync');
+  var reload = browserSync.reload;
 
   var paths = {
-    dist: 'dist/',
+    dist: 'dist',
     srcHtml: 'src/**/*.html',
     srcFavicons: 'build/src/*.{ico,png}',
     srcFonts: 'build/src/app/boot/fonts/**/*.woff',
@@ -25,14 +26,14 @@ gulp.task('watch', function() {
   // start browser sync server (and watch static files)
   browserSync({
     open: 'interal',
-    files: 'dist/**/*.*',
+    //files: 'dist/**/*.*',
     server: {
       baseDir: paths.dist
     }
   });
 
   // watch src gulp tasks
-  gulp.watch(paths.srcHtml, {interval: 500}, ['html']);
+  gulp.watch(paths.srcHtml, {interval: 500}, ['html', reload]);
   /*gulp.watch(paths.srcFavicons, {interval: 500}, ['favicons']);
   gulp.watch(paths.srcFonts, {interval: 500}, ['fonts']);
   gulp.watch(paths.srcIcons, {interval: 500}, ['icons']);
