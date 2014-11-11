@@ -1,0 +1,340 @@
+/**
+ * Base
+ *
+ * Custom fonts, typographic features and responsive elements
+ * and default styles for html tags
+ */
+
+/**
+ * Custom fonts
+ */
+
+/* (SIL Open Font License, 1.1 from http://www.huertatipografica.com.ar) */
+@font-face {
+  font-family: 'BitterWeb';
+  src:
+    url('../fonts/bitter/400.woff') format('woff'),
+    url('../fonts/bitter/400.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BitterWeb';
+  src:
+    url('../fonts/bitter/400i.woff') format('woff'),
+    url('../fonts/bitter/400i.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'BitterWeb';
+  src:
+    url('../fonts/bitter/700.woff') format('woff'),
+    url('../fonts/bitter/700.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* (SIL Open Font License, 1.1) */
+@font-face {
+  font-family: 'PaprikaWeb';
+  src:
+    url('../fonts/paprika/400.woff') format('woff'),
+    url('../fonts/paprika/400.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* (SIL Open Font License, 1.1) */
+@font-face {
+  font-family: 'Icomoon';
+  src:
+    url('../fonts/icomoon/400.woff') format('woff'),
+    url('../fonts/icomoon/400.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/**
+ * Lobotomized owl
+ */
+
+* {
+  margin: 0;
+}
+
+* + * {
+  margin-top: 1.5em;
+}
+
+/**
+ * HTML5
+ */
+
+main {
+  display: block;
+}
+
+/**
+ * Box sizing
+ */
+
+html {
+  box-sizing: border-box;
+  text-size-adjust: 100%; /* 2 */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/**
+ * Typographic features
+ */
+
+body {
+  background: var(--color-white) url("../images/common-bg.jpg") center top repeat;
+  color: var(--color-black);
+  font-family: var(--font-family-serif);
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  text-rendering: optimizeLegibility;
+}
+
+/**
+ * Selection
+ */
+
+::selection {
+  background: var(--color-green-light);
+  text-shadow: none;
+}
+
+/**
+ * Responsive elements
+ */
+
+canvas,
+iframe,
+img,
+svg,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+/**
+ * heading content
+ */
+
+h1,
+h2,
+h3 {
+  clear: both;
+  font-family: PaprikaWeb, cursive;
+  font-weight: normal;
+  padding: 0 0.5em 0.75em 0.5em;
+  text-align: center;
+}
+
+h1 {
+  background: url('../images/common-swiggle.svg') no-repeat bottom center;
+  font-size: 1.625em;
+}
+
+h2 {
+  background: url('../images/common-wave.svg') no-repeat bottom center;
+  font-size: 1.375em;
+}
+
+h3 {
+  font-size: 1em;
+  padding-bottom: 0;
+}
+
+h1 + h2,
+h2 + h3 {
+  margin-top: 0;
+}
+
+/**
+ * Links
+ */
+
+a {
+  color: var(--color-green);
+  border-bottom: 1px dotted var(--color-green);
+  text-decoration: none;
+  word-wrap: break-word;
+}
+
+a:focus {
+  outline: none;
+}
+
+a:active,
+a:hover {
+  border-bottom-style: solid;
+  text-decoration: none;
+}
+
+a:active {
+  transform: translate(0, 1px);
+}
+
+/**
+ * lists
+ */
+
+ul,
+ol {
+  padding-left: 1.5em;
+}
+
+ul li,
+ol li {
+  margin-top: 0;
+}
+
+/**
+ * embedding content
+ */
+
+img {
+  border: none;
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+figure {
+  clear: both;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  text-align: center;
+}
+
+figcaption {
+  color: var(--color-gray);
+  font-size: 0.813em;
+  font-style: italic;
+  padding: 0 3%;
+  text-align: center;
+}
+
+/**
+ * table
+ */
+
+table {
+  border-spacing: 0;
+  width: 100%;
+}
+
+caption {
+  font-weight: bold;
+  padding-bottom: 1em;
+  text-align: left;
+}
+
+th,
+td {
+  border-bottom: 0.071em solid var(--color-gray-lighter);
+  font-size: 0.875em;
+  padding: 0.5em;
+  text-align: left;
+  vertical-align: top;
+}
+
+tr:last-child td {
+  border-bottom-width: 0;
+  padding-bottom: 0;
+}
+
+/**
+ * text-level semantics
+ */
+
+address {
+  font-style: normal;
+}
+
+small {
+  font-size: 1em;
+}
+
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/**
+ * Medium viewport
+ */
+
+@media (--md-viewport) {
+
+  /**
+   * Heading content
+   */
+
+  h1 {
+    font-size: 1.875em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  h3 {
+    font-size: 1.25em;
+  }
+
+  /**
+   * Lists
+   */
+
+  ul,
+  ol {
+    padding-left: 2.5em;
+  }
+
+  /**
+   * Table
+   */
+
+  th,
+  td {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
+}
+
+/**
+ * Large viewport
+ */
+
+@media (--lg-viewport) {
+
+  /**
+   * Heading content
+   */
+
+  h1 {
+    font-size: 2.375em;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  h3 {
+    font-size: 1.5em;
+  }
+}

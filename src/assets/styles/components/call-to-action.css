@@ -1,0 +1,16 @@
+/** @define CallToAction; use strict */
+
+/**
+ * CallToAction
+ *
+ * An area within the main content that asks the user
+ * to perform an action
+ */
+
+.CallToAction {
+  background: var(--color-orange-light);
+  clear: both;
+  font-size: 0.875em;
+  padding: 1.5em;
+  text-align: center;
+}

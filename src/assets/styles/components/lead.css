@@ -1,0 +1,48 @@
+/** @define Lead; use strict */
+
+/**
+ * Lead
+ *
+ * Logo and slogan for the site
+ */
+
+.Lead {}
+
+.Lead-title {
+  background: none;
+  text-align: center;
+  padding: 0;
+}
+
+.Lead-logo {
+  height: 200px;
+  width: 200px;
+}
+
+.Lead-tagline {
+  font-family: var(--font-family-cursive);
+  font-size: 1.125em;
+  margin-top: 0.5em;
+  padding: 0 0 0.25em 0;
+  text-align: center;
+}
+
+/**
+ * Medium viewport
+ */
+
+@media (--md-viewport) {
+  .Lead-tagline {
+    font-size: 1.5em;
+  }
+}
+
+/**
+ * Large viewport
+ */
+
+@media (--lg-viewport) {
+  .Lead-tagline {
+    font-size: 1.75em;
+  }
+}

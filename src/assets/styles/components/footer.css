@@ -1,0 +1,78 @@
+/** @define Footer; use strict */
+
+/**
+ * Footer
+ */
+
+.Footer {
+  background: var(--color-gray-lightest);
+  color: var(--color-gray);
+  margin: 0 auto;
+  max-width: 56em;
+  padding: 2em 5%;
+}
+
+.Footer-external {
+  padding: 0;
+}
+
+.Footer-item {
+  display: block;
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.Footer-item--facebook {
+  margin-bottom: 1em;
+}
+
+.Footer-link {
+  border: none !important;
+}
+
+.Footer-media {
+  display: inline-block;
+  margin: 0 0.35em 0.5em 0.35em;
+}
+
+.Footer-facebook {
+  background: var(--color-white);
+  font-size: 0.813em;
+  height: 95px;
+  line-height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  width: 195px;
+}
+
+.Footer-body {
+  font-size: 0.750em;
+  text-align: center;
+  text-shadow: 0 0.063rem 0 var(--color-white);
+}
+
+/**
+ * Medium viewport
+ */
+
+@media (--md-viewport) {
+  .Footer-facebook {
+    margin-top: 15px;
+  }
+}
+
+/**
+ * Large viewport
+ */
+
+@media (--lg-viewport) {
+  .Footer-external {
+    display: flex;
+  }
+
+  .Footer-item {
+    flex: 1;
+  }
+}

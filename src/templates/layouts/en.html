@@ -2,72 +2,80 @@
 
 {% block body %}
 
-<header class="banner" id="banner" role="banner">
-  <div class="banner__nav">
-    <div class="banner__nav-inner">
-      <a class="banner__lang-selector icon icon--language" href="index-es.html">En Español</a>
-      <a class="banner__menu icon icon--menu" href="#navigation">Menu</a>
-    </div>
-  </div>
-  {#
-  <div class="banner__alert">
-    <div class="banner__alert-inner">
-       We are currently <strong>closed</strong> due to severe weather across Nicaragua. Please contact us for a reopen date.
-    </div>
-  </div>
-  #}
-</header>
-
-<div class="main" role="main">
-  {% block main %}{% endblock %}
+<div class="Chrome-header">
+  <header class="Header" id="banner" role="banner">
+    <ul class="Header-inner">
+      <li class="Header-item"><a class="Header-itemInner Icon Icon--language" href="index-es.html">En Español</a></li>
+      <li class="Header-item Header-item--menu"><a class="Header-itemInner Icon Icon--menu" href="#navigation">Menu</a></li>
+    </ul>
+  </header>
 </div>
 
-<nav class="navigation" id="navigation" role="navigation">
-  <ul class="navigation__inner">
-    <li class="navigation__item{% if id == 'home' %} is-active{% endif %}">
-      <a class="navigation__item-inner" href="./">Home</a>
-    </li>
-    <li class="navigation__item{% if id == 'about' %} is-active{% endif %}">
-      <a class="navigation__item-inner" href="about-jiquilillo.html">About<span class="navigation__item-extra navigation__item-extra--about">&nbsp;Jiquilillo</span></a>
-    </li>
-    <li class="navigation__item{% if id == 'projects'%} is-active{% endif %}">
-      <a class="navigation__item-inner" href="community-projects.html">Projects &amp; Volunteering</a>
-    </li>
-    <li class="navigation__item{% if id == 'prices'%} is-active{% endif %}">
-      <a class="navigation__item-inner" href="accommodation-and-food.html">Accommodation &amp; Food</a>
-    </li>
-    <li class="navigation__item{% if id == 'activities'%} is-active{% endif %}">
-      <a class="navigation__item-inner" href="activities-and-excursions.html">Activities<span class="navigation__item-extra navigation__item-extra--activities">&nbsp;&amp; Excursions</span></a>
-    </li>
-    <li class="navigation__item navigation__item--end{% if id == 'find'%} is-active{% endif %}">
-      <a class="navigation__item-inner" href="finding-us.html">Finding Us</a>
-    </li>
-  </ul>
-</nav>
+<div class="Chrome-notification">
+  <div class="Notification">
+    <p class="Notification-inner">
+      We are currently <strong>closed</strong> due to severe weather across Nicaragua. <a class="Notification-link" href="">Please contact</a> us for a reopen date.
+    </p>
+  </div>
+</div>
+
+<div class="Chrome-main">
+  <main class="Main" role="main">
+    {% block main %}{% endblock %}
+  </main>
+</div>
+
+<div class="Chrome-navigation">
+  <nav class="Navigation" id="navigation" role="navigation">
+    <ul class="Navigation-inner">
+      <li class="Navigation-item">
+        <a class="Navigation-itemInner{% if id == 'home' %} is-active{% endif %}" href="./">Home</a>
+      </li>
+      <li class="Navigation-item">
+        <a class="Navigation-itemInner{% if id == 'about' %} is-active{% endif %}" href="about-jiquilillo.html">About Jiquilillo</a>
+      </li>
+      <li class="Navigation-item">
+        <a class="Navigation-itemInner{% if id == 'projects'%} is-active{% endif %}" href="community-projects.html">Projects & Volunteering</a>
+      </li>
+      <li class="Navigation-item">
+        <a class="Navigation-itemInner{% if id == 'prices'%} is-active{% endif %}" href="accommodation-and-food.html">Accommodation & Food</a>
+      </li>
+      <li class="Navigation-item">
+        <a class="Navigation-itemInner{% if id == 'activities'%} is-active{% endif %}" href="activities-and-excursions.html">Activities & Excursions</a>
+      </li>
+      <li class="Navigation-item">
+        <a class="Navigation-itemInner Navigation-itemInner--end{% if id == 'find'%} is-active{% endif %}" href="finding-us.html">Finding Us</a>
+      </li>
+    </ul>
+  </nav>
+</div>
 
 {% include "../partials/complementary.html" %}
 
-<footer class="contentinfo" role="contentinfo">
-  <div class="contentinfo__inner">
-
-    <ul class="contentinfo__external">
-      <li class="contentinfo__external-item">
-        <div class="contentinfo__facebook" data-widget="facebook">
+<div class="Chrome-footer">
+  <footer class="Footer" role="contentinfo">
+    <ul class="Footer-external">
+      <li class="Footer-item Footer-item--facebook">
+        <div class="Footer-facebook" data-widget="facebook">
           <a href="https://www.facebook.com/rancho.esperanza.jiquilillo">Find us on Facebook</a>
         </div>
       </li>
-      <li class="contentinfo__external-item contentinfo__external-item--trip">
-        <a href="http://www.tripadvisor.co.uk/Hotel_Review-g2167866-d1646502-Reviews-Rancho_Esperanza-Jiquilillo_Chinandega_Department.html">
-          <img  class="contentinfo__external-item-img" alt="Tripadvisor Certificate of Excellence 2013" height="126" src="assets/images/common-tripadvisor.png" width="152">
-          <img class="contentinfo__external-item-img contentinfo__external-item-img--2014" alt="Tripadvisor Certificate of Excellence 2014" height="126" src="assets/images/common-tripadvisor-2014.png" width="152">
+      <li class="Footer-item Footer-item--trip">
+        <a class="Footer-link" href="http://www.tripadvisor.co.uk/Hotel_Review-g2167866-d1646502-Reviews-Rancho_Esperanza-Jiquilillo_Chinandega_Department.html">
+          <img class="Footer-media" alt="Tripadvisor Certificate of Excellence 2013" height="126" src="assets/images/common-tripadvisor.png" width="152">
+          <img class="Footer-media" alt="Tripadvisor Certificate of Excellence 2014" height="126" src="assets/images/common-tripadvisor-2014.png" width="152">
         </a>
       </li>
     </ul>
 
-    <p class="contentinfo__body">We have <a href="links-and-recommendations.html">recommendations</a> for other lodgings, restaurants, activities and volunteer opportunities in Nicaragua. The rancho is <a href="for-sale.html">for sale</a>, and represents a wonderful opportunity for anyone who is interested in eco-tourism.</p>
+    <div class="Footer-body">
+      <p>We have <a href="links-and-recommendations.html">recommendations</a> for other lodgings, restaurants, activities and volunteer opportunities in Nicaragua.</p>
 
-    <p class="contentinfo__body">Lastly, this website, like almost everything here, was a team effort and we&rsquo;d like to <a href="made-by.html">thank everyone</a> who helped.</p>
-  </div>
-</footer>
+      <p>The rancho is <a href="for-sale.html">for sale</a>, and is a wonderful opportunity for anyone interested in eco-tourism.</p>
+
+      <p>We'd like to <a href="made-by.html">thank everyone</a> who helped with this website.</p>
+    </div>
+  </footer>
+</div>
 
 {% endblock %}

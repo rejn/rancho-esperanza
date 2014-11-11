@@ -10,7 +10,8 @@ gulp.task('raw', function() {
       'src/**/*.*',
       '!src/**/*.html',
       '!src/assets/images/**/*.*',
-      '!src/assets/styls/**/*.*'
+      '!src/assets/scripts/**/*.*',
+      '!src/assets/styles/**/*.*'
     ],
     dest: 'dist'
   };

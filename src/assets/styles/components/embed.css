@@ -1,0 +1,23 @@
+/** @define Embed; use strict */
+
+/**
+ * Embed
+ *
+ * Intrinsic ratios for Google Maps embed
+ */
+
+.Embed {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 80%;
+  padding-top: 30px;
+  position: relative;
+}
+
+.Embed-inner {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}

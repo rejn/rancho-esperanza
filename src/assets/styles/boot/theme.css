@@ -1,0 +1,60 @@
+/**
+ * Theme
+ */
+
+/**
+ * Custom media
+ */
+
+@custom-media --md-viewport (min-width: 44em);
+@custom-media --lg-viewport (min-width: 55em);
+
+:root {
+
+  /**
+   * Colours
+   */
+
+  --color-black: rgb(0, 0, 0);
+  --color-white: rgb(255, 255, 255);
+
+  --color-gray: gray(120);
+  --color-gray-light: gray(120);
+  --color-gray-lighter: gray(200);
+  --color-gray-lightest: gray(240);
+  --color-gray-dark: gray(40);
+
+  --color-green: rgb(141, 158, 87);
+  --color-green-light: color(var(--color-green) tint(85%));
+  --color-green-dark: color(var(--color-green) shade(30%));
+  --color-green-darker: color(var(--color-green) shade(50%));
+
+  --color-orange: rgb(240, 160, 40);
+  --color-orange-light: color(var(--color-orange) tint(85%));
+  --color-orange-dark: color(var(--color-orange) shade(30%));
+  --color-orange-darker: color(var(--color-orange) shade(50%));
+
+  /* alphas */
+  --color-black-alpha: color(var(--color-black) alpha(50%));
+  --color-black-alpha-clear: color(var(--color-black) alpha(20%));
+
+  /**
+   * Fonts
+   */
+
+  /* Family */
+  --font-family-cursive: PaprikaWeb, cursive;
+  --font-family-serif: BitterWeb, serif;
+  --font-family-icon: Icomoon, serif;
+
+  /* Line height */
+  --line-height-tighter: 1;
+  --line-height-tight: 1.25;
+  --line-height: 1.5;
+  --line-height-loose: 1.75;
+  --line-height-looser: 2;
+
+  /* Sizes */
+  --font-size: 1em;
+
+}

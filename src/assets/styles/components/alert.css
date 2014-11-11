@@ -1,0 +1,15 @@
+/** @define Alert; use strict */
+
+/**
+ * Alert
+ *
+ * An emphasised area within the main content
+ */
+
+.Alert {
+  border: 0 dotted var(--color-orange);
+  border-style: solid dotted;
+  border-width: 0.25em 0.063em;
+  clear: both;
+  padding: 1.5em;
+}

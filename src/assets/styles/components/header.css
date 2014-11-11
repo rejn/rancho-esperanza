@@ -1,0 +1,56 @@
+/** @define Header; use strict */
+
+/**
+ * Header
+ */
+
+.Header {
+  background: var(--color-green-dark);
+  margin: 0;
+  padding: 0.5em 5%;
+}
+
+.Header-inner {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.Header-item {
+  list-style: none;
+  padding: 0;
+}
+
+.Header-item--menu {
+  margin-left: auto;
+}
+
+.Header-itemInner {
+  border-bottom-color: var(--color-green-dark);
+  color: var(--color-white);
+  font-size: 0.875em;
+  text-shadow: 0.063em 0.063em 0.125em var(--color-black-alpha);
+}
+
+.Header-itemInner:hover {
+  border-bottom-color: var(--color-green);
+}
+
+/**
+ * Large viewport
+ */
+
+@media (--lg-viewport) {
+  .Header {
+    padding: 0.5em 0;
+  }
+
+  .Header-inner {
+    margin-left: auto;
+    width: 26em;
+  }
+
+  .Header-item--menu {
+    display: none;
+  }
+}

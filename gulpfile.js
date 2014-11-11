@@ -12,9 +12,14 @@ gulp.task('default', ['clean'], function (cb) {
   var runSequence = require('run-sequence');
 
   runSequence([
+    'scripts:lint',
+    'styles:lint'
+  ], [
     'html',
     'images',
-    'raw'
-  ], cb);
+    'raw',
+    'scripts',
+    'styles',
+  ], 'html:lint', cb);
 
 });

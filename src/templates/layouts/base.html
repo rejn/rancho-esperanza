@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-{#[if lt IE 9]><html lang="{{ lang }}" class="no-js old-ie"><![endif]#}
-{#[if gt IE 8]>{#><html lang="{{ lang }}" class="no-js">{#<![endif]#}
+<html lang="{{ lang }}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
     <meta name="description" content="{{ description }}">
-    <link href="./styles/core.css?v=7" rel="stylesheet">
-    <script src="./vendor/modernizr/modernizr.js"></script>
-  </head>
+    <!--[if IE]><link href="assets/styles/ie.css" rel="stylesheet"><![endif]-->
+    <![if !IE]><link href="assets/styles/site.css" rel="stylesheet"><![endif]>
+    <script src="assets/vendor/modernizr/modernizr.js"></script>
+</head>
 
-  <body>
+  <body class="Chrome">
     {% block body %}{% endblock %}
-    <script src="./scripts/core.js"></script>
+    <script src="assets/scripts/core.js"></script>
     {#
       <script>
         var _gaq=[['_setAccount','UA-11848325-3'],['_trackPageview']];

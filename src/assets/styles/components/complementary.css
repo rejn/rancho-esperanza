@@ -1,0 +1,80 @@
+/** @define Complementary; use strict */
+
+/**
+ * Complementary
+ *
+ * Sandwiched between the footer and the navigation, it is an area
+ * for complementary information e.g. contact details
+ */
+
+.Complementary {
+  background: var(--color-green-dark);
+  border-top: 0.063em solid var(--color-white);
+  margin: 0;
+  padding: 0.5em 5%;
+}
+
+.Complementary-inner {
+  margin: 0;
+  padding: 0;
+}
+
+.Complementary-item {
+  display: block;
+  list-style: none;
+  padding: 0.25em 0;
+}
+
+.Complementary-itemInner {
+  border-bottom-color: var(--color-green-dark);
+  color: var(--color-white);
+  font-size: 0.875em;
+  text-shadow: 0.063em 0.063em 0.125em var(--color-black-alpha);
+}
+
+.Complementary-itemInner:hover {
+  border-bottom-color: var(--color-green);
+}
+
+/**
+ * Medium viewport
+ */
+
+@media (--md-viewport) {
+  .Complementary {
+    border-top: none;
+  }
+
+  .Complementary-inner {
+    display: flex;
+  }
+
+  .Complementary-item--secondary {
+    margin-left: auto;
+  }
+}
+
+/**
+ * Large viewport
+ */
+
+@media (--lg-viewport) {
+  .Complementary {
+    padding: 0.5em 0;
+  }
+
+  .Complementary-inner {
+    width: 26em;
+  }
+
+  .Complementary-item {
+    margin-left: auto;
+    padding: 0;
+  }
+
+  .Complementary-item--secondary {
+    border-left: 0.063em solid var(--color-green);
+    margin-left: 1em;
+    padding-left: 1em;
+  }
+}

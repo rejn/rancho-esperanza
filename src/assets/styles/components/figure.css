@@ -1,0 +1,66 @@
+/** @define Figure; use strict */
+
+/**
+ * Figure
+ *
+ * Styles and intrinsic ratios for photographs with captions.
+ */
+
+.Figure {
+  max-width: 660px;
+  width: 100%;
+}
+
+.Figure-media {
+  background: var(--color-gray-lightest);
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.Figure-media::before {
+  content: '';
+  float: right;
+  padding-top: 50%;
+}
+
+/**
+ * 320x240 sized image
+ */
+
+.Figure--320x240 {
+  max-width: 320px;
+}
+
+.Figure--320x240 .Figure-media::before {
+  padding-top: 75%;
+}
+
+/**
+ * 270x360 sized image
+ */
+.Figure--270x360 {
+  max-width: 270px;
+}
+
+.Figure--270x360 .Figure-media::before {
+  padding-top: 133.3333333333%;
+}
+
+/**
+ * Medium viewport
+ */
+
+@media (--md-viewport) {
+  .Figure--pullLeft {
+    float: left;
+    margin-bottom: 1.5em;
+    margin-right: 1.5em;
+  }
+
+  .Figure--pullRight {
+    float: right;
+    margin-bottom: 1.5em;
+    margin-left: 1.5em;
+  }
+}

@@ -1,0 +1,66 @@
+/** @define Icon; use strict */
+
+/**
+ * Icon
+ */
+
+.Icon {
+  white-space: nowrap;
+}
+
+.Icon::before {
+  display: inline-block;
+  font-family: var(--font-family-icon);
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  margin-right: 0.25em;
+  position: relative;
+  speak: none;
+  text-transform: none;
+  top: 2px;
+}
+
+.Icon--inline::before {
+  padding-left: 0.25em;
+}
+
+.Icon--language::before {
+  content: "\e601";
+}
+
+.Icon--phone::before {
+  content: "\e602";
+}
+
+.Icon--email::before {
+  content: "\e603";
+}
+
+.Icon--menu::before {
+  content: "\e604";
+}
+
+.Icon--arrowRight::before {
+  content: "\e605";
+}
+
+.Icon--community::before {
+  content: "\e607";
+}
+
+.Icon--surfing::before {
+  content: "\e609";
+}
+
+.Icon--signpost::before {
+  content: "\e608";
+}
+
+.Icon--village::before {
+  content: "\e60a";
+}
+
+.Icon--bed::before {
+  content: "\e606";
+}

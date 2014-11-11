@@ -2,21 +2,26 @@
 
 {% block body %}
 
-<header class="banner banner--es" id="banner" role="banner">
-  <div class="banner__nav">
-    <div class="banner__nav-inner">
-      <a class="banner__lang-selector icon icon--language" href="index.html">English site</a>
-    </div>
-  </div>
-  {#<div class="banner__alert">
-    <div class="banner__alert-inner">
-      Estamos cerrados actualmente, debido al clima severo.
-    </div>
-  </div>#}
-</header>
+<div class="Chrome-header">
+  <header class="Header" id="banner" role="banner">
+    <ul class="Header-inner">
+      <li class="Header-item"><a class="Header-itemInner Icon Icon--language" href="index.html">English site</a></li>
+    </ul>
+  </header>
+</div>
 
-<div class="main" role="main">
-  {% block main %}{% endblock %}
+<div class="Chrome-notification">
+  <div class="Notification">
+    <p class="Notification-inner">
+      Estamos cerrados actualmente, debido al clima severo.
+    </p>
+  </div>
+</div>
+
+<div class="Chrome-main">
+  <div class="Main" role="main">
+    {% block main %}{% endblock %}
+  </div>
 </div>
 
 {% include "../partials/complementary.html" %}

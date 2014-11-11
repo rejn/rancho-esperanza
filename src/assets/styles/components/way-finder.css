@@ -1,0 +1,134 @@
+/** @define WayFinder; use strict */
+
+/**
+ * WayFinder
+ *
+ * Helps the user to continue their journey through the site
+ */
+
+.WayFinder {
+  clear: both;
+  text-align: center;
+}
+
+.WayFinder-inner {
+  margin: 0;
+  padding: 0;
+}
+
+.WayFinder-items {
+  margin: 0;
+  padding: 0;
+}
+
+.WayFinder-item {
+  list-style: none;
+  margin: 0 auto;
+  max-width: 22em;
+  position: relative;
+}
+
+.WayFinder-item--end {
+  margin-top: 2em;
+  padding-top: 1em;
+}
+
+.WayFinder-item--end::after {
+  border: 1px dotted var(--color-gray);
+  border-width: 1px 0 0 0;
+  content: '';
+  left: 50%;
+  margin-left: -25%;
+  position: absolute;
+  top: 0;
+  width: 50%;
+}
+
+.WayFinder-itemTitle {
+  margin: 0;
+  position: relative;
+}
+
+.WayFinder-itemTitle::before {
+  color: var(--color-green);
+  display: block;
+  font-size: 3em;
+  line-height: var(--line-height-tighter);
+  margin-bottom: 0.4em;
+}
+
+.WayFinder-itemBody {
+  display: block;
+  font-size: 0.875em;
+  margin-bottom: 0;
+}
+
+.WayFinder-itemLink {
+  background: var(--color-green);
+  border: 1px solid var(--color-green);
+  border-radius: 1px;
+  box-shadow: 0 2px 0 var(--color-black-alpha);
+  color: var(--color-white);
+  display: inline-block;
+  font-size: 0.875em;
+  padding: 0.5em 3em 0.5em 1.5em;
+  position: relative;
+  text-shadow: 1px 1px 2px var(--color-black-alpha-clear);
+}
+
+.WayFinder-itemLink:hover {
+  background: var(--color-green-dark);
+  border-color: var(--color-green-dark);
+}
+
+.WayFinder-itemLink:active {
+  transform: translate(0, 2px);
+  box-shadow: none;
+}
+
+.WayFinder-itemLink::after {
+  content: "\e600";
+  display: inline-block;
+  font-family: var(--font-family-icon);
+  margin-top: -0.6em;
+  position: absolute;
+  right: 1.5em;
+  top: 50%;
+}
+
+/**
+ * Large viewport
+ */
+
+@media (--lg-viewport) {
+
+  /**
+   * Fork
+   */
+
+  .WayFinder--fork .WayFinder-inner {
+    display: flex;
+    justify-content: center;
+  }
+
+  .WayFinder--fork .WayFinder-item {
+    max-width: 24em;
+    padding: 0 1em;
+    flex: 1;
+  }
+
+  .WayFinder--fork .WayFinder-item--end {
+    margin-top: 0;
+  }
+
+  .WayFinder--fork .WayFinder-item--end::after {
+    border-width: 0 0 0 1px;
+    content: '';
+    height: 50%;
+    left: 0;
+    margin-left: 0;
+    margin-top: -10%;
+    position: absolute;
+    top: 50%;
+  }
+}

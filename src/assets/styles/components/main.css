@@ -1,0 +1,14 @@
+/** @define Main; use strict */
+
+/**
+ * Main
+ *
+ * The main content area of the site
+ */
+
+.Main {
+  background: var(--color-white);
+  margin: 0 auto;
+  max-width: 56em;
+  padding: 2em 5%;
+}

@@ -1,0 +1,78 @@
+/** @define Chrome; use strict */
+
+/**
+ * Chrome
+ *
+ * Lays out the main chunks of the site, from the
+ * header to the footer
+ */
+
+.Chrome {
+  margin: 0;
+}
+
+.Chrome-header {
+  margin: 0;
+}
+
+.Chrome-notification {
+  margin: 0;
+}
+
+.Chrome-main {
+  margin: 0;
+}
+
+.Chrome-navigation {
+  margin: 0;
+}
+
+.Chrome-complementary {
+  margin: 0;
+}
+
+.Chrome-footer {
+  margin: 0;
+}
+
+/**
+ * Medium viewport
+ */
+
+@media (--lg-viewport) {
+  .Chrome {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .Chrome-header {
+    flex: 0 0 50%;
+    margin-left: auto;
+    order: 1;
+  }
+
+  .Chrome-notification {
+    flex: 0 0 100%;
+    order: 4;
+  }
+
+  .Chrome-main {
+    flex: 0 0 100%;
+    order: 5;
+  }
+
+  .Chrome-navigation {
+    flex: 0 0 100%;
+    order: 3;
+  }
+
+  .Chrome-complementary {
+    flex: 0 0 50%;
+    order: 2;
+  }
+
+  .Chrome-footer {
+    flex: 0 0 100%;
+    order: 6;
+  }
+}

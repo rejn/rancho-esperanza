@@ -1,16 +1,16 @@
 {
-  "node": true,
+  "bitwise": true,
+  "camelcase": true,
+  "curly": true,
   "esnext": true,
-  "bitwise": false,
-  "curly": false,
-  "eqeqeq": true,
-  "eqnull": true,
   "immed": true,
-  "latedef": true,
+  "indent": 2,
   "newcap": true,
   "noarg": true,
+  "node": true,
+  "predef": ["it"],
+  "quotmark": "single",
+  "strict": true,
   "undef": true,
-  "strict": false,
-  "trailing": true,
-  "smarttabs": true
+  "unused": "vars"
 }

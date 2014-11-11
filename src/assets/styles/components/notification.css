@@ -1,0 +1,25 @@
+/** @define Notification; use strict */
+
+/**
+ * Notification
+ */
+
+.Notification {
+  background-color: var(--color-orange);
+  border-bottom: 1px solid var(--color-orange-dark);
+  margin: 0 auto;
+  max-width: 56em;
+  padding: 1.5em 5%;
+}
+
+.Notification-inner {
+  color: var(--color-white);
+  font-size: 0.875em;
+  text-align: center;
+  text-shadow: 0.063em 0.063em 0.125em var(--color-black-alpha);
+}
+
+.Notification-link {
+  border-bottom-color: var(--color-white);
+  color: var(--color-white);
+}

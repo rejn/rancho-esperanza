@@ -1,0 +1,54 @@
+/**
+ * IE
+ *
+ * Basic styles for < IE10
+ */
+
+/**
+ * HTML5
+ */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/**
+ * Basic tag styles
+ */
+
+body {
+  margin: 0 auto;
+  text-align: center;
+  width: 660px;
+}
+
+ul {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+  padding: 0;
+}
+
+figure {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+table {
+  width: 100%;
+}
