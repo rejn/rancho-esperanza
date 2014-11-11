@@ -8,18 +8,15 @@
     <!--[if IE]><link href="assets/styles/ie.css" rel="stylesheet"><![endif]-->
     <![if !IE]><link href="assets/styles/site.css" rel="stylesheet"><![endif]>
     <script src="assets/vendor/modernizr/modernizr.js"></script>
-</head>
-
+  </head>
   <body class="Chrome">
     {% block body %}{% endblock %}
     <script src="assets/scripts/core.js"></script>
-    {#
-      <script>
-        var _gaq=[['_setAccount','UA-11848325-3'],['_trackPageview']];
-        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-        g.src='//www.google-analytics.com/ga.js';
-        s.parentNode.insertBefore(g,s)}(document,'script'));
-      </script>
-    #}
+    <script>
+      var _gaq=[['_setAccount','UA-11848325-3'],['_trackPageview']];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src='//www.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
   </body>
 </html>
