@@ -1,7 +1,5 @@
-.grunt/
 dist/
 .editorconfig
-.ftppass
 .gitattributes
 .jshintrc
 .npmignore
