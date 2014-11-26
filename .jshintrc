@@ -4,12 +4,10 @@
   "curly": true,
   "esnext": true,
   "immed": true,
-  "indent": 2,
   "newcap": true,
   "noarg": true,
   "node": true,
   "predef": ["it"],
-  "quotmark": "single",
   "strict": true,
   "undef": true,
   "unused": "vars"
