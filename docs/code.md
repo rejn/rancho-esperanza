@@ -54,7 +54,7 @@ Use [Autoprefixer](https://github.com/postcss/autoprefixer) (as a postcss plugin
   content 'x';
 }
 
-@support (hyphens) {
+@supports (hyphens) {
   hyphens: auto;
   text-align: justify;
 }
