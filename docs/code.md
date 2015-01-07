@@ -12,9 +12,9 @@ Adhere to the [SuitCSS HTML and CSS styleguide](https://github.com/suitcss/suit/
 
 Follow the [SuitCSS design principles](https://github.com/suitcss/suit/blob/master/doc/design-principles.md) and use the [SuitCSS naming conventions](https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md).
 
-### Polyfiller and postprocessor
+### Transpiler and postprocessor
 
-Use [PostCSS](https://github.com/postcss/postcss) as a polyfiller for the following CSS specifications:
+Use [PostCSS](https://github.com/postcss/postcss) as a transpiler for the following CSS specifications:
 
 * [CSS Custom Media Queries](http://dev.w3.org/csswg/mediaqueries/#custom-mq).
 * [CSS Custom Properties for Cascading Variables Module](http://dev.w3.org/csswg/css-variables/).
