@@ -5,9 +5,9 @@ var gulp = require('gulp');
 gulp.task('scripts', function() {
 
   var args = require('yargs').argv;
+  var babel = require('gulp-babel');
   var gulpIf = require('gulp-if');
   var sourcemaps = require('gulp-sourcemaps');
-  var to5 = require('gulp-6to5');
   var uglify = require('gulp-uglify');
 
   var paths = {
@@ -19,7 +19,7 @@ gulp.task('scripts', function() {
 
   return gulp.src(paths.src)
     .pipe(sourcemaps.init())
-    .pipe(to5())
+    .pipe(babel())
     .on('error', function (err) {
       console.log(err.message);
       this.emit('end');
