@@ -11,48 +11,43 @@
 
 /* (SIL Open Font License, 1.1 from http://www.huertatipografica.com.ar) */
 @font-face {
-  font-family: 'BitterWeb';
-  src:
-    url('../fonts/bitter/400.woff') format('woff'),
-    url('../fonts/bitter/400.ttf') format('truetype');
+  font-family: "BitterWeb";
+  src: url("../fonts/bitter/400.woff") format("woff"),
+    url("../fonts/bitter/400.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'BitterWeb';
-  src:
-    url('../fonts/bitter/400i.woff') format('woff'),
-    url('../fonts/bitter/400i.ttf') format('truetype');
+  font-family: "BitterWeb";
+  src: url("../fonts/bitter/400i.woff") format("woff"),
+    url("../fonts/bitter/400i.ttf") format("truetype");
   font-weight: 400;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'BitterWeb';
-  src:
-    url('../fonts/bitter/700.woff') format('woff'),
-    url('../fonts/bitter/700.ttf') format('truetype');
+  font-family: "BitterWeb";
+  src: url("../fonts/bitter/700.woff") format("woff"),
+    url("../fonts/bitter/700.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
 
 /* (SIL Open Font License, 1.1) */
 @font-face {
-  font-family: 'PaprikaWeb';
-  src:
-    url('../fonts/paprika/400.woff') format('woff'),
-    url('../fonts/paprika/400.ttf') format('truetype');
+  font-family: "PaprikaWeb";
+  src: url("../fonts/paprika/400.woff") format("woff"),
+    url("../fonts/paprika/400.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 /* (SIL Open Font License, 1.1) */
 @font-face {
-  font-family: 'Icomoon';
-  src:
-    url('../fonts/icomoon/400.woff') format('woff'),
-    url('../fonts/icomoon/400.ttf') format('truetype');
+  font-family: "Icomoon";
+  src: url("../fonts/icomoon/400.woff") format("woff"),
+    url("../fonts/icomoon/400.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
@@ -139,17 +134,17 @@ h3 {
   clear: both;
   font-family: PaprikaWeb, cursive;
   font-weight: normal;
-  padding: 0 0.5em 0.75em 0.5em;
+  padding: 0 0.5em 0.75em;
   text-align: center;
 }
 
 h1 {
-  background: url('../images/common-swiggle.svg') no-repeat bottom center;
+  background: url("../images/common-swiggle.svg") no-repeat bottom center;
   font-size: 1.625em;
 }
 
 h2 {
-  background: url('../images/common-wave.svg') no-repeat bottom center;
+  background: url("../images/common-wave.svg") no-repeat bottom center;
   font-size: 1.375em;
 }
 
@@ -168,8 +163,8 @@ h2 + h3 {
  */
 
 a {
-  color: var(--color-green);
   border-bottom: 1px dotted var(--color-green);
+  color: var(--color-green);
   text-decoration: none;
   word-wrap: break-word;
 }
@@ -207,7 +202,7 @@ ol li {
  */
 
 img {
-  border: none;
+  border: 0;
   height: auto;
   max-width: 100%;
   vertical-align: middle;

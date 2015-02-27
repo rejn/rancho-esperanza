@@ -42,7 +42,7 @@
 
 @media (--md-viewport) {
   .Complementary {
-    border-top: none;
+    border-top: 0;
   }
 
   .Complementary-inner {

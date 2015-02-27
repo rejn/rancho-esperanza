@@ -10,8 +10,8 @@
 
 .Lead-title {
   background: none;
-  text-align: center;
   padding: 0;
+  text-align: center;
 }
 
 .Lead-logo {
@@ -23,7 +23,7 @@
   font-family: var(--font-family-cursive);
   font-size: 1.125em;
   margin-top: 0.5em;
-  padding: 0 0 0.25em 0;
+  padding: 0 0 0.25em;
   text-align: center;
 }
 

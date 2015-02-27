@@ -35,8 +35,8 @@
 
 .WayFinder-item--end::after {
   border: 1px dotted var(--color-gray);
-  border-width: 1px 0 0 0;
-  content: '';
+  border-width: 1px 0 0;
+  content: "";
   left: 50%;
   margin-left: -25%;
   position: absolute;
@@ -82,8 +82,8 @@
 }
 
 .WayFinder-itemLink:active {
-  transform: translate(0, 2px);
   box-shadow: none;
+  transform: translate(0, 2px);
 }
 
 .WayFinder-itemLink::after {
@@ -112,9 +112,9 @@
   }
 
   .WayFinder--fork .WayFinder-item {
+    flex: 1;
     max-width: 24em;
     padding: 0 1em;
-    flex: 1;
   }
 
   .WayFinder--fork .WayFinder-item--end {
@@ -123,7 +123,7 @@
 
   .WayFinder--fork .WayFinder-item--end::after {
     border-width: 0 0 0 1px;
-    content: '';
+    content: "";
     height: 50%;
     left: 0;
     margin-left: 0;

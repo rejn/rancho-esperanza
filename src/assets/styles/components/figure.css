@@ -19,7 +19,7 @@
 }
 
 .Figure-media::before {
-  content: '';
+  content: "";
   float: right;
   padding-top: 50%;
 }

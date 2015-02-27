@@ -1,0 +1,18 @@
+linters:
+  Comment:
+    enabled: false
+  EmptyRule:
+    enabled: false
+  LeadingZero:
+    style: include_zero
+  MergeableSelector:
+    force_nesting: false
+  NestingDepth:
+    max_depth: 1
+  PropertySpelling:
+    extra_properties:
+      - text-size-adjust
+  SelectorFormat:
+    enabled: false
+  StringQuotes:
+    style: double_quotes

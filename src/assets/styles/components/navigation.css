@@ -24,7 +24,7 @@
 }
 
 .Navigation-item:last-child {
-  border-bottom: none;
+  border-bottom: 0;
 }
 
 .Navigation-itemInner {
@@ -39,19 +39,19 @@
 }
 
 .Navigation-itemInner::after {
-  content: '\e600';
+  content: "\e600";
   float: right;
   font-family: var(--font-family-icon);
   top: 0;
 }
 
 .Navigation-itemInner:hover,
-.Navigation-itemInner.is-active  {
+.Navigation-itemInner.is-active {
   border-left-color: var(--color-green-darker);
 }
 
 .Navigation-itemInner.is-active::after {
-  content: '\e605';
+  content: "\e605";
 }
 
 /**
@@ -72,7 +72,7 @@
   }
 
   .Navigation-item {
-    border-bottom: none;
+    border-bottom: 0;
     margin: 0 0.35em;
     padding: 0.2em 0;
     position: relative;
@@ -90,7 +90,7 @@
   }
 
   .Navigation-itemInner::after {
-    content: '\00B7' !important;
+    content: "\00B7" !important;
     font-family: var(--font-family-serif);
     position: absolute;
     right: -0.5em;
