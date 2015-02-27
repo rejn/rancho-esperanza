@@ -19,7 +19,9 @@ gulp.task('scripts', function() {
 
   return gulp.src(paths.src)
     .pipe(sourcemaps.init())
-    .pipe(babel())
+    .pipe(babel({
+      blacklist: ['useStrict']
+    }))
     .on('error', function (err) {
       console.log(err.message);
       this.emit('end');
