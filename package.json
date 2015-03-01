@@ -20,7 +20,7 @@
     "gulp-imagemin": "^2.2.1",
     "gulp-jscs": "^1.4.0",
     "gulp-jshint": "^1.9.2",
-    "gulp-minify-css": "^0.4.6",
+    "gulp-minify-css": "^0.5.1",
     "gulp-minify-html": "^1.0.0",
     "gulp-postcss": "^4.0.3",
     "gulp-sourcemaps": "^1.5.0",
@@ -37,6 +37,6 @@
     "postcss-import": "^5.0.3",
     "require-dir": "^0.1.0",
     "run-sequence": "^1.0.2",
-    "yargs": "^3.3.1"
+    "yargs": "^3.4.4"
   }
 }
