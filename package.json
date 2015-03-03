@@ -37,6 +37,6 @@
     "postcss-import": "^5.0.3",
     "require-dir": "^0.1.0",
     "run-sequence": "^1.0.2",
-    "yargs": "^3.4.4"
+    "yargs": "^3.4.5"
   }
 }
