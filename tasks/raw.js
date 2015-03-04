@@ -9,7 +9,7 @@ gulp.task('raw', function() {
       'src/.*',
       'src/**/*.*',
       '!src/**/*.html',
-      '!src/assets/images/**/*.*',
+      //'!src/assets/images/**/*.*',
       '!src/assets/scripts/**/*.*',
       '!src/assets/styles/**/*.*'
     ],

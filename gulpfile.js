@@ -13,7 +13,7 @@ gulp.task('default', ['clean'], function (cb) {
 
   runSequence([
     'html',
-    'images',
+    //'images',
     'raw',
     'scripts',
     'scripts:lint',
