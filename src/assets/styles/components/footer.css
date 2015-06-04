@@ -24,7 +24,7 @@
 }
 
 .Footer-item--facebook {
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
 }
 
 .Footer-link {
@@ -51,28 +51,4 @@
   font-size: 0.750em;
   text-align: center;
   text-shadow: 0 0.063rem 0 var(--color-white);
-}
-
-/**
- * Medium viewport
- */
-
-@media (--md-viewport) {
-  .Footer-facebook {
-    margin-top: 15px;
-  }
-}
-
-/**
- * Large viewport
- */
-
-@media (--lg-viewport) {
-  .Footer-external {
-    display: flex;
-  }
-
-  .Footer-item {
-    flex: 1;
-  }
 }
