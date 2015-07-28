@@ -48,6 +48,9 @@
       fr.src = 'http://static.fundrazr.com/widgets/loader.js';
       head.appendChild(fr);
 
+      let link = this.document.querySelector('.fr-widget a');
+      link.style.display = 'none';
+
     }
 
     addGmaps(el) {
