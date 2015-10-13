@@ -1,14 +1,13 @@
-'use strict';
+'use strict'
 
-var gulp = require('gulp');
+var gulp = require('gulp')
 
-gulp.task('clean', function(cb) {
-
-  var del = require('del');
+gulp.task('clean', function () {
+  var del = require('del')
 
   var paths = {
     dist: 'dist'
-  };
+  }
 
-  del(paths.dist, cb);
-});
+  del(paths.dist)
+})

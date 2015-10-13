@@ -1,5 +1,3 @@
-.grunt/
 dist/
 node_modules/
-.ftppass
-npm-debug.log
+*.log

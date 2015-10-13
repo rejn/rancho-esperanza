@@ -1,16 +1,15 @@
-'use strict';
+'use strict'
 
-var gulp = require('gulp');
+var gulp = require('gulp')
 
-gulp.task('images', function() {
-
-  var changed = require('gulp-changed');
-  var imagemin = require('gulp-imagemin');
+gulp.task('images', function () {
+  var changed = require('gulp-changed')
+  var imagemin = require('gulp-imagemin')
 
   var paths = {
     src: 'src/assets/images/*.{gif,jpg,png,svg}',
     dest: 'dist/assets/images'
-  };
+  }
 
   return gulp.src(paths.src)
     .pipe(changed(paths.dest))
@@ -21,6 +20,5 @@ gulp.task('images', function() {
         removeViewBox: false
       }]
     }))
-    .pipe(gulp.dest(paths.dest));
-
-});
+    .pipe(gulp.dest(paths.dest))
+})

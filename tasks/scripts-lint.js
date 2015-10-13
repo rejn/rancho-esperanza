@@ -1,12 +1,10 @@
-'use strict';
+'use strict'
 
-var gulp = require('gulp');
+var gulp = require('gulp')
 
-gulp.task('scripts:lint', function() {
-
-  var cached = require('gulp-cached');
-  var jscs = require('gulp-jscs');
-  var jshint = require('gulp-jshint');
+gulp.task('scripts:lint', function () {
+  var cached = require('gulp-cached')
+  var standard = require('gulp-standard')
 
   var paths = {
     src: [
@@ -14,16 +12,12 @@ gulp.task('scripts:lint', function() {
       'tasks/*.js',
       'src/assets/scripts/**/*.js'
     ]
-  };
+  }
 
   return gulp.src(paths.src)
     .pipe(cached('scripts'))
-    .pipe(jscs())
-    .on('error', function (err) {
-      console.log(err.message);
-      this.emit('end');
-    })
-    .pipe(jshint())
-    .pipe(jshint.reporter('jshint-stylish'));
-
-});
+    .pipe(standard())
+    .pipe(standard.reporter('default', {
+      breakOnError: false
+    }))
+})
