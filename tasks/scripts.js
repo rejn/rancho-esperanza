@@ -19,7 +19,11 @@ gulp.task('scripts', function () {
   return gulp.src(paths.src)
     .pipe(sourcemaps.init())
     .pipe(babel({
-      blacklist: ['useStrict']
+      "presets": [["env", {
+        "targets": {
+          "browsers": ["last 2 versions"]
+        }
+      }]]
     }))
     .on('error', function (err) {
       console.log(err.message)
