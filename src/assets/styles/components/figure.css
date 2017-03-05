@@ -53,6 +53,7 @@
  */
 
 @media (--md-viewport) {
+
   .Figure--pullLeft {
     float: left;
     margin-bottom: 1.5em;

@@ -19,9 +19,9 @@ gulp.task('scripts', function () {
   return gulp.src(paths.src)
     .pipe(sourcemaps.init())
     .pipe(babel({
-      "presets": [["env", {
-        "targets": {
-          "browsers": ["last 2 versions"]
+      'presets': [['env', {
+        'targets': {
+          'browsers': ['last 2 versions']
         }
       }]]
     }))

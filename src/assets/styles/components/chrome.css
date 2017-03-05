@@ -40,6 +40,7 @@
  */
 
 @media (--lg-viewport) {
+
   .Chrome {
     display: flex;
     flex-wrap: wrap;

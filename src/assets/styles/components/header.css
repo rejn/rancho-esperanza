@@ -41,6 +41,7 @@
  */
 
 @media (--lg-viewport) {
+
   .Header {
     padding: 0.5em 0;
   }

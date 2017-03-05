@@ -41,6 +41,7 @@
  */
 
 @media (--md-viewport) {
+
   .Complementary {
     border-top: 0;
   }
@@ -59,6 +60,7 @@
  */
 
 @media (--lg-viewport) {
+
   .Complementary {
     padding: 0.5em 0;
   }
