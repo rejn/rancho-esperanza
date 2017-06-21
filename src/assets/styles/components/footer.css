@@ -27,6 +27,11 @@
   margin-bottom: 1.5em;
 }
 
+.Footer-item--trip {
+  margin: 0 auto;
+  max-width: 600px;
+}
+
 .Footer-link {
   border: none !important;
 }
