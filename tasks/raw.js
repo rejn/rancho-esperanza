@@ -5,6 +5,7 @@ var gulp = require('gulp')
 gulp.task('raw', function () {
   var paths = {
     src: [
+      'src/_redirects',
       'src/.*',
       'src/**/*.*',
       '!src/**/*.html',
